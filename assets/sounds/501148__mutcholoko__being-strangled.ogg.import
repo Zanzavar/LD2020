@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/501148__mutcholoko__being-strangled.ogg-54f7c8273d694827c498276fe0e74a70.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/501148__mutcholoko__being-strangled.ogg"
+dest_files=[ "res://.import/501148__mutcholoko__being-strangled.ogg-54f7c8273d694827c498276fe0e74a70.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/horse_snort.ogg-07277ff3a035217c05d27c8eaae79d0c.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/horse_snort.ogg"
+dest_files=[ "res://.import/horse_snort.ogg-07277ff3a035217c05d27c8eaae79d0c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
