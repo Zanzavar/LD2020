@@ -8,14 +8,12 @@ func _ready():
 func _on_Area_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 			if event.button_index == BUTTON_LEFT and event.pressed:
-				pass
+				get_parent().on_Click()
 
 func _on_Area_mouse_entered():
-	print("hello??")
 	dialog = get_parent().get_parent().dialog(get_parent().desc)
 
 
 func _on_Area_mouse_exited():
-	print("hello??q")
 	get_parent().get_parent().remove_child(dialog)
 	
