@@ -171,13 +171,12 @@ autoplay = "ArrowAnimation"
 anims/ArrowAnimation = SubResource( 10 )
 
 [node name="Introtext" type="Label" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 margin_left = 42.8062
 margin_top = 156.176
 margin_right = 442.806
 margin_bottom = 245.176
 custom_fonts/font = SubResource( 1 )
-text = "They left him tied on his horse in the middle of nowhere - that would be perfectly fine if only for the tight noose around his neck ending on a branch tree above. "
+text = "They left him tied on his horse in the middle of nowhere - that would be perfectly fine if only for the tight noose around his neck hanging from a tree branch above. "
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
