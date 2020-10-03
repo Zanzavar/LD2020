@@ -1,0 +1,128 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://objects/Clickable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://stam/bill_idle.png" type="Texture" id=2]
+[ext_resource path="res://objects/Bill.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "LookDown"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "LookLeft"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "LookRight"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "LookUp"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Wink"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+
+[node name="Bill" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Clickable" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1.12373, -2.99661 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 3
+frame = 5
+
+[node name="Anime" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+anims/Idle = SubResource( 1 )
+anims/LookDown = SubResource( 2 )
+anims/LookLeft = SubResource( 3 )
+anims/LookRight = SubResource( 4 )
+anims/LookUp = SubResource( 5 )
+anims/Wink = SubResource( 6 )
+next/Idle = "Idle"
+next/LookDown = "Idle"
+next/LookLeft = "LookRight"
+next/LookRight = "LookLeft"
+next/LookUp = "Idle"
+next/Wink = "Idle"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
