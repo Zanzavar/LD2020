@@ -4,35 +4,9 @@
 [ext_resource path="res://assets/sounds/244942__spoonbender__wind-through-trees-3b.wav" type="AudioStream" id=2]
 [ext_resource path="res://scenes/Intro.gd" type="Script" id=3]
 [ext_resource path="res://assets/sprites/arrow up.png" type="Texture" id=4]
+[ext_resource path="res://assets/sounds/426614__mrh4hn__breathing-and-weezing.wav" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
-resource_name = "Text1"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Introtext:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Bill never really got how he ended up in this situation - Now his hide was in the hands of lady luck." ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Introtext:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=2]
 resource_name = "Text2"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Introtext:text")
@@ -59,7 +33,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Text3"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Introtext:text")
@@ -89,7 +63,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "TextFadeIn"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Introtext:modulate")
@@ -104,7 +78,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "TextFadeOut"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Introtext:modulate")
@@ -119,7 +93,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "ArrowAnimation"
 length = 2.0
 loop = true
@@ -136,19 +110,19 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 20
 font_data = ExtResource( 1 )
 
-[sub_resource type="Gradient" id=8]
+[sub_resource type="Gradient" id=7]
 offsets = PoolRealArray( 0, 0.470968, 1 )
 colors = PoolColorArray( 0, 0, 0, 1, 0.290323, 0.290323, 0.290323, 1, 1, 1, 1, 1 )
 
-[sub_resource type="GradientTexture" id=9]
-gradient = SubResource( 8 )
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
 width = 1
 
-[sub_resource type="AnimatedTexture" id=10]
+[sub_resource type="AnimatedTexture" id=9]
 
 [node name="Intro" type="Node2D"]
 script = ExtResource( 3 )
@@ -159,23 +133,22 @@ one_shot = true
 autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Text1 = SubResource( 1 )
-anims/Text2 = SubResource( 2 )
-anims/Text3 = SubResource( 3 )
-anims/TextFadeIn = SubResource( 4 )
-anims/TextFadeOut = SubResource( 5 )
+anims/Text2 = SubResource( 1 )
+anims/Text3 = SubResource( 2 )
+anims/TextFadeIn = SubResource( 3 )
+anims/TextFadeOut = SubResource( 4 )
 next/Text2 = "ArrowAnimate"
 
 [node name="AnimationPlayerArrow" type="AnimationPlayer" parent="."]
 autoplay = "ArrowAnimation"
-anims/ArrowAnimation = SubResource( 6 )
+anims/ArrowAnimation = SubResource( 5 )
 
 [node name="Introtext" type="Label" parent="."]
 margin_left = 42.8062
 margin_top = 156.176
 margin_right = 442.806
 margin_bottom = 245.176
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 text = "They left him tied on his horse in the middle of nowhere - that would be perfectly fine if only for the tight noose around his neck hanging from a tree branch above. "
 autowrap = true
 __meta__ = {
@@ -191,11 +164,16 @@ flip_v = true
 modulate = Color( 1, 1, 1, 0.909091 )
 position = Vector2( 230.307, 79.8966 )
 scale = Vector2( 200, 100 )
-texture = SubResource( 9 )
-normal_map = SubResource( 10 )
+texture = SubResource( 8 )
+normal_map = SubResource( 9 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BackgroundWind" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+volume_db = -11.849
+autoplay = true
+
+[node name="BillWheez" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 autoplay = true
 
 [node name="Node2D" type="Node2D" parent="."]
