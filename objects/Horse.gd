@@ -1,4 +1,4 @@
 extends Node2D
 
 var desc = "This is Menios!"
-func on_Click(): pass
+func on_Click(): $Snort.play()
