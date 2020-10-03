@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 var world = load("res://scenes/Game.tscn").instance()
 var gaming = true

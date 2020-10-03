@@ -30,7 +30,7 @@ func text_advance():
 func text_update():
 	if(text.length() > visible_characters):
 		visible_characters = visible_characters + 1
-	else: get_parent().get_parent().stop_talking()
+#	else: get_parent().get_parent().stop_talking()
 
 func _input(event):
 	if(event.is_action_released(confirm_action)):
