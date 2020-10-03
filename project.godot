@@ -21,6 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="LD47"
+run/main_scene="res://scenes/Intro.tscn"
 config/icon="res://icon.png"
 
 [gdnative]
@@ -32,4 +33,3 @@ singletons=[ "res://git_api.gdnlib" ]
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-environment/default_environment="res://default_env.tres"
