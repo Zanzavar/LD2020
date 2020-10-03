@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/426614__mrh4hn__breathing-and-weezing.wav-4f83dcd1458fed90082250b128d34fc1.sample"
+
+[deps]
+
+source_file="res://assets/sounds/426614__mrh4hn__breathing-and-weezing.wav"
+dest_files=[ "res://.import/426614__mrh4hn__breathing-and-weezing.wav-4f83dcd1458fed90082250b128d34fc1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
