@@ -7,4 +7,4 @@
 script = ExtResource( 3 )
 
 [node name="Cat" parent="." instance=ExtResource( 2 )]
-position = Vector2( 221.749, 220.251 )
+position = Vector2( 88.0468, 90.7533 )

@@ -12,7 +12,7 @@ func _on_Area_input_event(viewport, event, shape_idx):
 
 func _on_Area_mouse_entered():
 	print("hello??")
-	dialog = get_parent().get_parent().dialog("hello there?")
+	dialog = get_parent().get_parent().dialog(get_parent().desc)
 
 
 func _on_Area_mouse_exited():
