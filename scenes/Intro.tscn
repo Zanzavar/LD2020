@@ -17,7 +17,7 @@ width = 1
 
 [sub_resource type="AnimatedTexture" id=4]
 
-[node name="Node2D2" type="Node2D"]
+[node name="Intro" type="Node2D"]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
