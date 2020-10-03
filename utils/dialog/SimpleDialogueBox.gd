@@ -1,7 +1,7 @@
 extends Label
 
 var delta_time = 0
-export var speed = 0.1
+export var speed = 0.05
 export(String, MULTILINE) var dialogue_text = ""
 export var confirm_action = "ui_select"
 var current_page = 0
