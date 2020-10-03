@@ -1,7 +1,140 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/fonts/mini_pixel-7.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/sounds/244942__spoonbender__wind-through-trees-3b.wav" type="AudioStream" id=2]
+[ext_resource path="res://scenes/Intro.gd" type="Script" id=3]
+[ext_resource path="res://assets/sprites/arrow up.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=7]
+resource_name = "Text1"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Introtext:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Bill never really got how he ended up in this situation - Now his hide was in the hands of lady luck." ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Introtext:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Text2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Introtext:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "They left him tied on his horse in the middle of nowhere - that would be perfectly fine if only for the tight noose around his neck hanging from a tree branch above. " ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Introtext:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Text3"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Introtext:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Nothing to do but await the inevitable. His hide was in the hands of lady luck.
+
+Or was it?
+" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Introtext:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "TextFadeIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Introtext:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "TextFadeOut"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Introtext:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "ArrowAnimation"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Arrow:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -17,28 +150,46 @@ width = 1
 
 [sub_resource type="AnimatedTexture" id=4]
 
-[node name="Node2D2" type="Node2D"]
+[node name="Intro" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 autostart = true
 
-[node name="Introtext" type="Label" parent="."]
-margin_left = 40.0
-margin_top = 149.441
-margin_right = 440.0
-margin_bottom = 238.441
-custom_fonts/font = SubResource( 1 )
-text = "Bill never really got how he ended up in this situation - Now his hide was in the hands of lady luck.
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Text1 = SubResource( 7 )
+anims/Text2 = SubResource( 8 )
+anims/Text3 = SubResource( 9 )
+anims/TextFadeIn = SubResource( 5 )
+anims/TextFadeOut = SubResource( 6 )
+next/Text2 = "ArrowAnimate"
 
-Or was it?"
+[node name="AnimationPlayerArrow" type="AnimationPlayer" parent="."]
+autoplay = "ArrowAnimation"
+anims/ArrowAnimation = SubResource( 10 )
+
+[node name="Introtext" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 42.8062
+margin_top = 156.176
+margin_right = 442.806
+margin_bottom = 245.176
+custom_fonts/font = SubResource( 1 )
+text = "They left him tied on his horse in the middle of nowhere - that would be perfectly fine if only for the tight noose around his neck ending on a branch tree above. "
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Arrow" type="Sprite" parent="."]
+position = Vector2( 419.392, 234.748 )
+texture = ExtResource( 4 )
+flip_v = true
+
 [node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.909091 )
 position = Vector2( 230.307, 79.8966 )
 scale = Vector2( 200, 100 )
 texture = SubResource( 3 )
@@ -49,3 +200,4 @@ stream = ExtResource( 2 )
 autoplay = true
 
 [node name="Node2D" type="Node2D" parent="."]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
