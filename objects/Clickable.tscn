@@ -3,7 +3,7 @@
 [ext_resource path="res://objects/Clickable.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 34.7845
+radius = 19.1571
 
 [node name="Clickable" type="Node2D"]
 script = ExtResource( 1 )
