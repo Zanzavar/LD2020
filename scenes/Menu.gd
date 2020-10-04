@@ -16,13 +16,13 @@ func _process(delta):
 			_on_Instructions_button_down()
 
 func _on_Start_game_button_down():
+	Input.action_release("ui_accept")
 	get_parent().add_child(intro)
 	get_parent().remove_child(self)
 	backgroundwind.play()
 	billwheez.play()
-	
-
 
 func _on_Instructions_button_down():
+	Input.action_release("ui_accept")
 	get_parent().add_child(instructions)
 	get_parent().remove_child(self)
