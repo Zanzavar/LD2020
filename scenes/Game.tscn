@@ -68,3 +68,12 @@ position = Vector2( 404.449, 49.0814 )
 [node name="Anime" type="AnimationPlayer" parent="."]
 autoplay = "SceneFadeIn"
 anims/HatDrop = SubResource( 1 )
+
+[node name="Hive" parent="." instance=ExtResource( 7 )]
+position = Vector2( 339.322, 38.2268 )
+
+[node name="Bag" parent="." instance=ExtResource( 8 )]
+position = Vector2( 243.991, 145.828 )
+
+[node name="Apple" parent="." instance=ExtResource( 6 )]
+position = Vector2( 404.449, 49.0814 )

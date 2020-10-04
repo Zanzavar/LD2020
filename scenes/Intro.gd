@@ -2,10 +2,10 @@ extends Node2D
 
 export var state = 0
 onready var label = get_node("Introtext")
-var world = load("res://scenes/Game.tscn").instance()
+onready var world = load("res://scenes/Game.tscn").instance()
 
 func _ready():
-	label.text = "Bill knew that robbing the federal bank was probably not the greatest idea he ever had. Especially with the sheriff and his lackeys lurking nearby." 
+	label.text = "Bill knew that robbing the federal bank was probably not the greatest idea he ever had. Especially with the sheriff and his lackeys lurking nearby."
 
 func _process(delta):
 	if !$AnimationPlayer.is_playing() and Input.is_action_pressed("ui_accept"):
@@ -14,10 +14,10 @@ func _process(delta):
 			$AnimationPlayer.play("Text2")
 		elif state == 1:
 			$AnimationPlayer.play("Text3")
-		else: 
+		else:
 			$AnimationPlayer.play("FadeOut")
 		state += 1
-			
+
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if state == 3:
 		get_parent().add_child(world)
