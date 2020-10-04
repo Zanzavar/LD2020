@@ -1,10 +1,37 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/fonts/mini_pixel-7.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/sounds/244942__spoonbender__wind-through-trees-3b.wav" type="AudioStream" id=2]
 [ext_resource path="res://scenes/Intro.gd" type="Script" id=3]
 [ext_resource path="res://assets/sprites/arrow up.png" type="Texture" id=4]
 [ext_resource path="res://assets/sounds/426614__mrh4hn__breathing-and-weezing.wav" type="AudioStream" id=5]
+
+[sub_resource type="Animation" id=10]
+resource_name = "Text1"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Introtext:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Arrow:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "Text2"
@@ -133,6 +160,8 @@ one_shot = true
 autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Text1"
+anims/Text1 = SubResource( 10 )
 anims/Text2 = SubResource( 1 )
 anims/Text3 = SubResource( 2 )
 anims/TextFadeIn = SubResource( 3 )
@@ -142,20 +171,26 @@ next/Text2 = "ArrowAnimate"
 [node name="AnimationPlayerArrow" type="AnimationPlayer" parent="."]
 autoplay = "ArrowAnimation"
 anims/ArrowAnimation = SubResource( 5 )
+next/ArrowAnimation = "ArrowAnimation"
 
 [node name="Introtext" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0.1 )
 margin_left = 42.8062
 margin_top = 156.176
 margin_right = 442.806
 margin_bottom = 245.176
 custom_fonts/font = SubResource( 6 )
-text = "They left him tied on his horse in the middle of nowhere - that would be perfectly fine if only for the tight noose around his neck hanging from a tree branch above. "
+text = "Nothing to do but await the inevitable. His hide was in the hands of lady luck.
+
+Or was it?
+"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Arrow" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.1 )
 position = Vector2( 419.392, 234.748 )
 texture = ExtResource( 4 )
 flip_v = true
