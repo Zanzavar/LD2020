@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/rope_swinging.wav-07ea41b3a73d9ad3cd48a1bbcea38e9a.sample"
+
+[deps]
+
+source_file="res://assets/sounds/rope_swinging.wav"
+dest_files=[ "res://.import/rope_swinging.wav-07ea41b3a73d9ad3cd48a1bbcea38e9a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

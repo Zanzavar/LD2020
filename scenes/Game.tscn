@@ -168,7 +168,8 @@ position = Vector2( 438.097, 226.754 )
 rotation = 1.79839
 
 [node name="BadApple" type="Node2D" parent="."]
-position = Vector2( 399.418, 65.0567 )
+position = Vector2( 402.645, 235.919 )
+rotation = -1.51243
 __meta__ = {
 "_edit_group_": true
 }
