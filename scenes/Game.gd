@@ -1,12 +1,8 @@
 extends Node2D
 
-func dialog(text):
-	var diag = preload("res://utils/dialog/SimpleDialogueBox.tscn").instance()
-	diag.get_node("RichTextLabel").dialogue_text = text
-	diag.position = Vector2(get_viewport().size.x/4, get_viewport().size.y/2 + 19)
-	diag.get_node("RichTextLabel").text_advance()
-	add_child(diag)
-	return diag
+func dialog(text): 
+	$Label.text = text
+	return $Label
 
 onready var turn = 0
 onready var advancing = false
@@ -19,13 +15,14 @@ onready var advancing = false
 func advance():
 	if !advancing:
 		advancing = true
+		$Timer.start()
 		match turn:
 			3: apple_drops()
 			5: mouse_comes()
 			7: horse_leaves()
 		turn += 1
 		print(turn)
-
+		
 func apple_drops(): if !$Apple.dropped: horse_leaves_to_eat()
 func mouse_comes(): 
 	if !$Pistol.hit_barrel: mouse_sleeps()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://objects/Horse.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Cat.tscn" type="PackedScene" id=2]
@@ -16,6 +16,9 @@
 [ext_resource path="res://stam/apple.png" type="Texture" id=14]
 [ext_resource path="res://stam/hat_down.png" type="Texture" id=15]
 [ext_resource path="res://stam/hat.png" type="Texture" id=16]
+[ext_resource path="res://objects/Clickable.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/BadApple.gd" type="Script" id=18]
+[ext_resource path="res://assets/fonts/mini_pixel-7.ttf" type="DynamicFontData" id=19]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Apple"
@@ -183,6 +186,9 @@ tracks/2/keys = {
 "times": PoolRealArray( 1.2, 2 )
 }
 
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 19 )
+
 [node name="Game" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -216,6 +222,23 @@ position = Vector2( 350.123, 235.197 )
 [node name="Bird" parent="." instance=ExtResource( 12 )]
 position = Vector2( 118, 138 )
 
+[node name="Hive" parent="." instance=ExtResource( 7 )]
+position = Vector2( 438.313, 115.915 )
+rotation = 0.0340269
+
+[node name="BadApple" type="Node2D" parent="."]
+position = Vector2( 399.418, 65.0567 )
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="BadApple"]
+position = Vector2( 0.683716, 1.24489 )
+texture = ExtResource( 14 )
+
+[node name="Clickable" parent="BadApple" instance=ExtResource( 17 )]
+
 [node name="Mock" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.32549 )
 position = Vector2( 240, 135 )
@@ -231,20 +254,19 @@ anims/BirdHat = SubResource( 5 )
 anims/HatDrop = SubResource( 6 )
 anims/Hive = SubResource( 7 )
 
-[node name="Hive" parent="." instance=ExtResource( 7 )]
-position = Vector2( 438.313, 115.915 )
-rotation = 0.0340269
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
 
-[node name="BadApple" type="Node2D" parent="."]
-position = Vector2( 399.463, 66.3185 )
-rotation = -0.0809549
+[node name="Label" type="Label" parent="."]
+margin_top = 275.0
+margin_right = 480.0
+margin_bottom = 291.0
+custom_fonts/font = SubResource( 8 )
+align = 1
 __meta__ = {
-"_edit_group_": true
+"_edit_use_anchors_": false
 }
-
-[node name="Sprite" type="Sprite" parent="BadApple"]
-position = Vector2( 0.683716, 1.24489 )
-texture = ExtResource( 14 )
 [connection signal="animation_finished" from="Anime" to="." method="_on_Anime_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="Hat"]

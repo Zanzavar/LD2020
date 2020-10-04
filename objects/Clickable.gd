@@ -14,6 +14,8 @@ func _on_Area_mouse_entered():
 	dialog = get_parent().get_parent().dialog(get_parent().desc)
 
 
-func _on_Area_mouse_exited():
-	get_parent().get_parent().remove_child(dialog)
+func _on_Area_mouse_exited(): dialog.text = ""
+
+func allowed(): return get_parent().get_node("Timer").is_stopped()
+func turn(): get_parent().advance()
 	
