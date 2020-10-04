@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bush_idle1.png-9b78ca845350a9f51847e2bd173b9ed7.stex"
+path="res://.import/bush_idle1.png-0c8137c6c5e21328ee87d7f1e82180bd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stam/Bush_idle1.png"
-dest_files=[ "res://.import/Bush_idle1.png-9b78ca845350a9f51847e2bd173b9ed7.stex" ]
+source_file="res://stam/bush_idle1.png"
+dest_files=[ "res://.import/bush_idle1.png-0c8137c6c5e21328ee87d7f1e82180bd.stex" ]
 
 [params]
 
