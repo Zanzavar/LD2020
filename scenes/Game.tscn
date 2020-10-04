@@ -240,6 +240,7 @@ texture = ExtResource( 14 )
 [node name="Clickable" parent="BadApple" instance=ExtResource( 17 )]
 
 [node name="Mock" type="Sprite" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0.32549 )
 position = Vector2( 240, 135 )
 texture = ExtResource( 13 )

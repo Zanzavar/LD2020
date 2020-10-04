@@ -1,4 +1,4 @@
-extends "res://objects/ClickObject.gd"
+extends "Clickable.gd"
 
 onready var dropped = false
 onready var desc = "Figh Hive?"
