@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://objects/Horse.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Cat.tscn" type="PackedScene" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://objects/Bird.tscn" type="PackedScene" id=12]
 [ext_resource path="res://stam/mockup.png" type="Texture" id=13]
 [ext_resource path="res://stam/apple.png" type="Texture" id=14]
+[ext_resource path="res://stam/hat_down.png" type="Texture" id=15]
+[ext_resource path="res://stam/hat.png" type="Texture" id=16]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Apple"
@@ -105,30 +107,48 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=5]
 
 [sub_resource type="Animation" id=6]
-length = 2.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Hat:position")
+length = 2.2
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Hat:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.7, 1.1, 1.5, 1.9, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 222.837, 43.7265 ), Vector2( 266.255, 68.2672 ), Vector2( 301.651, 75.8182 ), Vector2( 332.326, 124.428 ), Vector2( 311.089, 153.688 ), Vector2( 341.765, 190.971 ), Vector2( 341.765, 190.971 ) ]
+"points": PoolRealArray( 236.322, -0.25, 0, 0.256739, 0.109375, 366.959, -0.175863, -2, 0.00955981, 0, 366.425, -0.023199, 1.1608, 0.1009, -1.59351, 342.537, -0.120452, -1.03897, 0.14187, -0.205627, 366.498, -0.0855825, -0.833344, 0.121835, -0.833344, 343.164, -0.143362, 0.833344, 0.112859, 0.482239, 366.498, -0.128111, -0.833344, 0.11591, 0, 344.831, -0.121286, -0.21994, 0.144086, -0.21994, 382.031, -0.12607, -0.482269, 0.136252, -0.482269, 350.831, -0.203401, -0.489624, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 0.7, 0.9, 1.1, 1.3, 1.5, 1.7, 1.9, 2.2 )
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("Hat:rotation_degrees")
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Hat:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.7, 1.3, 1.7, 1.9, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 135.826, 248.05, 348.366, 393.68, 383.448, 360.597 ]
+"points": PoolRealArray( 102.535, -0.25, 0, 0.25, 0, 84.4311, -0.25, 0, 0.25, 0, 247.631, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.7, 2.2 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Hat:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 161.231, -0.25, 0, 0.103156, -0.246506, 191.857, -0.117402, 0.578705, 0.0900155, -0.578705, 161.45, -0.102796, -0.206238, 0.109006, 0.413055, 191.19, -0.0763279, 0, 0.100519, -0.401871, 163.47, -0.102696, 0, 0.0707767, -0.401871, 239.801, -0.0879356, 0, 0.0954494, -1.38889, 298.135, -0.0896549, 0, 0.25, 0, 361.329, -0.0855796, -0.694443, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.7, 0.9, 1.1, 1.3, 1.5, 1.7, 1.9, 2.2 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Hat/Sprite:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 16 ), ExtResource( 15 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -177,14 +197,14 @@ position = Vector2( 238.044, 129.616 )
 position = Vector2( -37.6568, 241.562 )
 
 [node name="Hat" parent="." instance=ExtResource( 4 )]
-position = Vector2( 236.515, 101.092 )
+position = Vector2( 236.322, 102.535 )
 
 [node name="Bag" parent="." instance=ExtResource( 8 )]
 position = Vector2( 345.814, 164.92 )
 
 [node name="Apple" parent="." instance=ExtResource( 6 )]
-position = Vector2( 317.94, 203.486 )
-rotation = -2.54375
+position = Vector2( 316.869, 52.7712 )
+rotation = -0.0809549
 
 [node name="Pistol" parent="." instance=ExtResource( 9 )]
 position = Vector2( 169.373, 216.488 )
@@ -214,11 +234,12 @@ anims/HatDrop = SubResource( 6 )
 anims/Hive = SubResource( 7 )
 
 [node name="Hive" parent="." instance=ExtResource( 7 )]
-position = Vector2( 438.097, 226.754 )
-rotation = 1.79839
+position = Vector2( 438.313, 115.915 )
+rotation = 0.0340269
 
 [node name="BadApple" type="Node2D" parent="."]
-position = Vector2( 399.418, 65.0567 )
+position = Vector2( 399.463, 66.3185 )
+rotation = -0.0809549
 __meta__ = {
 "_edit_group_": true
 }
@@ -227,3 +248,5 @@ __meta__ = {
 position = Vector2( 0.683716, 1.24489 )
 texture = ExtResource( 14 )
 [connection signal="animation_finished" from="Anime" to="." method="_on_Anime_animation_finished"]
+
+[editable path="Hat"]
