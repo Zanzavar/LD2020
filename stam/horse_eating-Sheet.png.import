@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bush_idle2.png-69facc310ac6c796747a86cb032761f5.stex"
+path="res://.import/horse_eating-Sheet.png-b722ee01f3b189bebd4622dcbb0eba50.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stam/bush_idle2.png"
-dest_files=[ "res://.import/bush_idle2.png-69facc310ac6c796747a86cb032761f5.stex" ]
+source_file="res://stam/horse_eating-Sheet.png"
+dest_files=[ "res://.import/horse_eating-Sheet.png-b722ee01f3b189bebd4622dcbb0eba50.stex" ]
 
 [params]
 
