@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mouse_squeak.wav-577ee90b730661c64af456148c0051ec.sample"
+
+[deps]
+
+source_file="res://assets/sounds/mouse_squeak.wav"
+dest_files=[ "res://.import/mouse_squeak.wav-577ee90b730661c64af456148c0051ec.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
