@@ -77,7 +77,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "Fortunately for him,  at the last moment Indians chased his captors away. But Bill was left alone, tied on his horse and stuck with a tight loop around his neck. " ]
+"values": [ "Fortunately at the last moment Indians chased his captors away. But Bill was left alone, tied on his horse and stuck with a tight loop around his neck." ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Introtext:modulate")
@@ -105,7 +105,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "“Help!” he shouted but his voice went unheard. Soon he realised his hide was hanging by the threads of an extremely lucky sequence of events..." ]
+"values": [ "“Help!” he shouted but his voice went unheard for miles. Soon he realised his hide was hanging by the threads of an extremely lucky sequence of events..." ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Introtext:modulate")
@@ -169,7 +169,7 @@ margin_top = 156.176
 margin_right = 442.806
 margin_bottom = 245.176
 custom_fonts/font = SubResource( 7 )
-text = "“Help!” he shouted but there was no one nearby. Soon he realised his hide was hanging by the threads of an extremely lucky sequence of events..."
+text = "“Help!” he shouted but his voice went unheard. Soon he realised his hide was hanging by the threads of an extremely lucky sequence of events..."
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
