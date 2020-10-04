@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/horse_walk-Sheet.png-d70c66386f8b3326b633fd1a6d45fa6c.stex"
+path="res://.import/horse_walk_sheet.png-2942afa809034c914925639d80f5eaca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stam/horse_walk-Sheet.png"
-dest_files=[ "res://.import/horse_walk-Sheet.png-d70c66386f8b3326b633fd1a6d45fa6c.stex" ]
+source_file="res://stam/horse_walk_sheet.png"
+dest_files=[ "res://.import/horse_walk_sheet.png-2942afa809034c914925639d80f5eaca.stex" ]
 
 [params]
 
