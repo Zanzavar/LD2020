@@ -10,7 +10,7 @@ onready var advancing = false
 # MANOLI
 # Αν το διαβάζεις αυτό σε όλα τα on_Click των objects
 # θα πρέπει να καλείται στο τέλος το πιο κάτω function
-# για να μετράνε οι γύροι. get_parent().advance().
+# για να μετράνε οι γύροι. turn().
 # Μόνο στα clicks που μας ενδιαφέρουν να αλλάζει το turn.
 func advance():
 	if !advancing:
@@ -23,7 +23,7 @@ func advance():
 		turn += 1
 		print(turn)
 		
-func apple_drops(): if !$Apple.dropped: horse_leaves_to_eat()
+func apple_drops(): if !$Apple.dropped: $Anime.play("BadApple")
 func mouse_comes(): 
 	if !$Pistol.hit_barrel: mouse_sleeps()
 	else: mouse_scares_horse()
@@ -49,6 +49,8 @@ func _on_Anime_animation_finished(anim_name):
 			else: 
 				$Anime.play("BirdHat")
 				$Bird/Anime.play("Flight")
+		"Apple":
+			$Horse/Anime.play("Eating")
 
 func _on_Timer_timeout():
 	advancing = false
