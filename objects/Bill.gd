@@ -1,7 +1,6 @@
 extends "ClickObject.gd"
 
-var desc = "This is Bill. He seems ab it anxious."
-
+var desc = "This is Bill. He seems a bit anxious."
 var emotes = ["Idle", "Wink", "LookUp", "LookDown", "LookLeft", "LookRight"]
 
 func _on_Timer_timeout():
