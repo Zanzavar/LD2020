@@ -57,7 +57,6 @@ tracks/2/keys = {
 [sub_resource type="Animation" id=2]
 resource_name = "BadApple"
 length = 2.0
-loop = true
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("BadApple:position:x")
 tracks/0/interp = 1
@@ -91,17 +90,26 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "BarrelRoll"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Barrel:position")
+length = 1.6
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Barrel:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 34.7879, 162.823 ) ]
+"points": PoolRealArray( 22.1744, -0.25, 0, 0.0998429, -0.870419, 37.144, -0.0800951, 1.43999, 0.0951395, 0, 53.8778, -0.099376, 0.546284, 0.0758586, -0.893719, 62.624, -0.0796281, 0, 0.0568919, 1.44, 68.624, -0.0554909, -1.43999, 0.0810291, 1.44 ),
+"times": PoolRealArray( 0, 0.4, 1, 1.4, 1.6 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Barrel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 132.551, -0.25, 0, 0.0672412, 0.233322, 137.784, -0.0658318, 0, 0.0482744, -17, 191.784, -0.131978, -89.5496, 0.102347, -44.5496, 205.624, -0.0755528, -28, 0.0752304, -14.48, 214.624, -0.0432652, -14.4, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 1, 1.4, 1.6 )
 }
 
 [sub_resource type="Animation" id=4]
@@ -192,6 +200,10 @@ font_data = ExtResource( 19 )
 [node name="Game" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="Apple" parent="." instance=ExtResource( 6 )]
+position = Vector2( 294.995, 216.524 )
+rotation = -1.11857
+
 [node name="Horse" parent="." instance=ExtResource( 1 )]
 position = Vector2( 253.961, 177.345 )
 
@@ -207,14 +219,11 @@ position = Vector2( 236.322, 102.535 )
 [node name="Bag" parent="." instance=ExtResource( 8 )]
 position = Vector2( 345.814, 164.92 )
 
-[node name="Apple" parent="." instance=ExtResource( 6 )]
-position = Vector2( 316.824, 51.5095 )
-
 [node name="Pistol" parent="." instance=ExtResource( 9 )]
 position = Vector2( 169.373, 216.488 )
 
 [node name="Barrel" parent="." instance=ExtResource( 10 )]
-position = Vector2( 34.7879, 162.823 )
+position = Vector2( 22.1744, 132.551 )
 
 [node name="Mirror" parent="." instance=ExtResource( 11 )]
 position = Vector2( 350.123, 235.197 )
@@ -244,6 +253,9 @@ visible = false
 modulate = Color( 1, 1, 1, 0.32549 )
 position = Vector2( 240, 135 )
 texture = ExtResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Anime" type="AnimationPlayer" parent="."]
 autoplay = "SceneFadeIn"

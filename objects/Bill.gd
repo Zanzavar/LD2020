@@ -1,6 +1,6 @@
 extends "ClickObject.gd"
 
-onready var desc = "This is Bill. He seems a bit anxious."
+onready var desc = "Welp, luck was never my strong suit."
 onready var emotes = ["Idle", "Wink", "LookUp", "LookDown", "LookLeft", "LookRight"]
 
 func _on_Timer_timeout():

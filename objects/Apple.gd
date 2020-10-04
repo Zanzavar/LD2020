@@ -1,7 +1,7 @@
 extends "Clickable.gd"
 
 onready var dropped = false
-onready var desc = "Tasty apple. Horses love it."
+onready var desc = "Really? Apples in the middle of the desert?"
 
 func on_Click():
 	if !dropped and allowed():
