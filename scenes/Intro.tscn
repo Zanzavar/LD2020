@@ -65,7 +65,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=4]
-length = 2.0
 step = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Introtext:text")
@@ -74,7 +73,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ "Fortunately at the last moment Indians chased his captors away. But Bill was left alone, tied on his horse and stuck with a tight loop around his neck." ]
@@ -86,14 +85,13 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=5]
-length = 2.0
 step = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Introtext:text")
@@ -102,7 +100,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ "“Help!” he shouted but his voice went unheard for miles. Soon he realised his hide was hanging by the threads of an extremely lucky sequence of events..." ]
@@ -114,7 +112,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -169,13 +167,14 @@ margin_top = 156.176
 margin_right = 442.806
 margin_bottom = 245.176
 custom_fonts/font = SubResource( 7 )
-text = "“Help!” he shouted but his voice went unheard. Soon he realised his hide was hanging by the threads of an extremely lucky sequence of events..."
+text = "“Help!” he shouted but his voice went unheard for miles. Soon he realised his hide was hanging by the threads of an extremely lucky sequence of events..."
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Arrow" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 419.392, 234.748 )
 texture = ExtResource( 4 )
 flip_v = true

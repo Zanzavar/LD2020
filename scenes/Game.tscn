@@ -165,14 +165,15 @@ position = Vector2( 238.044, 129.616 )
 position = Vector2( -37.6568, 241.562 )
 
 [node name="Hat" parent="." instance=ExtResource( 4 )]
-position = Vector2( 236.515, 101.092 )
+position = Vector2( 324.657, 112.276 )
+rotation = 5.20471
 
 [node name="Bag" parent="." instance=ExtResource( 8 )]
 position = Vector2( 345.814, 164.92 )
 
 [node name="Apple" parent="." instance=ExtResource( 6 )]
-position = Vector2( 317.24, 71.9298 )
-rotation = -0.756074
+position = Vector2( 303.555, 222.349 )
+rotation = -6.37972
 
 [node name="Pistol" parent="." instance=ExtResource( 9 )]
 position = Vector2( 169.373, 216.488 )
