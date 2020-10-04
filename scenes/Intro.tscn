@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/fonts/mini_pixel-7.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/sounds/244942__spoonbender__wind-through-trees-3b.wav" type="AudioStream" id=2]
 [ext_resource path="res://scenes/Intro.gd" type="Script" id=3]
 [ext_resource path="res://assets/sprites/arrow up.png" type="Texture" id=4]
-[ext_resource path="res://assets/sounds/426614__mrh4hn__breathing-and-weezing.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sprites/intro1.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeIn"
@@ -78,7 +77,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "They left him tied on his horse in the middle of nowhere - that would be perfectly fine if only for the tight noose around his neck hanging from a tree branch above. " ]
+"values": [ "Fortunately for him,  at the last moment Indians chased his captors away. But Bill was left alone, tied on his horse and stuck with a tight loop around his neck. " ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Introtext:modulate")
@@ -106,10 +105,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "Nothing to do but await the inevitable. His hide was in the hands of lady luck.
-
-Or was it?
-" ]
+"values": [ "“Help!” he shouted but his voice went unheard. Soon he realised his hide was hanging by the threads of an extremely lucky sequence of events..." ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Introtext:modulate")
@@ -144,17 +140,8 @@ tracks/0/keys = {
 size = 20
 font_data = ExtResource( 1 )
 
-[sub_resource type="Gradient" id=8]
-offsets = PoolRealArray( 0, 0.470968, 1 )
-colors = PoolColorArray( 0, 0, 0, 1, 0.290323, 0.290323, 0.290323, 1, 1, 1, 1, 1 )
-
-[sub_resource type="GradientTexture" id=9]
-gradient = SubResource( 8 )
-width = 1
-
-[sub_resource type="AnimatedTexture" id=10]
-
 [node name="Intro" type="Node2D"]
+modulate = Color( 1, 1, 1, 0 )
 script = ExtResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -182,7 +169,7 @@ margin_top = 156.176
 margin_right = 442.806
 margin_bottom = 245.176
 custom_fonts/font = SubResource( 7 )
-text = "They left him tied on his horse in the middle of nowhere - that would be perfectly fine if only for the tight noose around his neck hanging from a tree branch above. "
+text = "“Help!” he shouted but there was no one nearby. Soon he realised his hide was hanging by the threads of an extremely lucky sequence of events..."
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -196,16 +183,7 @@ flip_v = true
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.909091 )
 position = Vector2( 230.307, 79.8966 )
-scale = Vector2( 200, 100 )
-texture = SubResource( 9 )
-normal_map = SubResource( 10 )
-
-[node name="BackgroundWind" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
-volume_db = -11.849
-
-[node name="BillWheez" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="Node2D" type="Node2D" parent="."]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

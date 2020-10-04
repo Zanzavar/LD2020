@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bee_hive.wav-da505e08a9df00dcd755804487e644a9.sample"
+
+[deps]
+
+source_file="res://assets/sounds/bee_hive.wav"
+dest_files=[ "res://.import/bee_hive.wav-da505e08a9df00dcd755804487e644a9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
