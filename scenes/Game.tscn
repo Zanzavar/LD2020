@@ -80,3 +80,5 @@ position = Vector2( 404.449, 49.0814 )
 autoplay = "SceneFadeIn"
 anims/HatDrop = SubResource( 1 )
 anims/SceneFadeIn = SubResource( 2 )
+
+[node name="Mock" type="Sprite" parent="."]
