@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://objects/Horse.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Cat.tscn" type="PackedScene" id=2]
@@ -79,4 +79,12 @@ position = Vector2( 404.449, 49.0814 )
 [node name="Anime" type="AnimationPlayer" parent="."]
 autoplay = "SceneFadeIn"
 anims/HatDrop = SubResource( 1 )
-anims/SceneFadeIn = SubResource( 2 )
+
+[node name="Hive" parent="." instance=ExtResource( 7 )]
+position = Vector2( 339.322, 38.2268 )
+
+[node name="Bag" parent="." instance=ExtResource( 8 )]
+position = Vector2( 243.991, 145.828 )
+
+[node name="Apple" parent="." instance=ExtResource( 6 )]
+position = Vector2( 404.449, 49.0814 )

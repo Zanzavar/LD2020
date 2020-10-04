@@ -1,6 +1,6 @@
 extends Node2D
 
-var dialog
+onready var dialog
 
 func _ready():
 	pass

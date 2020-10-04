@@ -41,5 +41,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="button_down" from="Control/Start game" to="." method="_on_Start_game_button_down"]
-[connection signal="focus_entered" from="Control/Start game" to="." method="_on_Start_game_focus_entered"]
 [connection signal="button_down" from="Control/Instructions" to="." method="_on_Instructions_button_down"]

@@ -1,11 +1,11 @@
 extends Label
 
-var delta_time = 0
 export var speed = 0.05
+onready var delta_time = 0
 export(String, MULTILINE) var dialogue_text = ""
 export var confirm_action = "ui_select"
-var current_page = 0
-var pages = []
+onready var current_page = 0
+onready var pages = []
 
 func _ready():
 	visible_characters = 0
