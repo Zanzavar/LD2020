@@ -1,10 +1,10 @@
-extends "res://objects/ClickObject.gd"
+extends "Clickable.gd"
 
 onready var dropped = false
 onready var desc = "Really? Apples in the middle of the desert?"
 
 func on_Click():
-	if !dropped:
+	if !dropped and allowed():
 		dropped = true
 		get_parent().get_node("Anime").play("Apple")
-		get_parent().advance()
+		turn()

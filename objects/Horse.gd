@@ -6,3 +6,5 @@ func on_Click():
 	if !$Snort.playing and allowed():
 		$Snort.play()
 		turn()
+
+func eat_apple(): get_parent().get_node("Apple").visible = false
