@@ -19,4 +19,3 @@ func _process(delta):
 			
 func _on_AnimationPlayer_animation_finished(anim_name):
 	state+=1
-	#$AnimationPlayer.play("TextFadeIn")

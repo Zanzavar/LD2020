@@ -144,7 +144,6 @@ autoplay = "ArrowAnimation"
 anims/ArrowAnimation = SubResource( 5 )
 
 [node name="Introtext" type="Label" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 margin_left = 42.8062
 margin_top = 156.176
 margin_right = 442.806

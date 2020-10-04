@@ -19,7 +19,7 @@ func _on_Start_game_button_down():
 	get_parent().add_child(intro)
 	get_parent().remove_child(self)
 	backgroundwind.play()
-	billwheez.play()
+	#billwheez.play()
 	
 
 
