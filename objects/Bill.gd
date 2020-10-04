@@ -13,5 +13,5 @@ func _on_Timer_timeout():
 		$Anime.play(emotes[3])
 	elif (chance < 50):
 		$Anime.play(emotes[4])
-	else: 
+	else:
 		$Anime.play(emotes[0])
