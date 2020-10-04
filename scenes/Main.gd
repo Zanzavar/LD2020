@@ -1,6 +1,6 @@
 extends Node2D
 
-var menu = load("res://scenes/Menu.tscn").instance()
+onready var menu = load("res://scenes/Menu.tscn").instance()
 	
 func _ready(): add_child(menu)
 	
