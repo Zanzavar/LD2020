@@ -201,8 +201,7 @@ font_data = ExtResource( 19 )
 script = ExtResource( 3 )
 
 [node name="Apple" parent="." instance=ExtResource( 6 )]
-position = Vector2( 294.995, 216.524 )
-rotation = -1.11857
+position = Vector2( 316.824, 51.5095 )
 
 [node name="Horse" parent="." instance=ExtResource( 1 )]
 position = Vector2( 253.961, 177.345 )
