@@ -5,7 +5,7 @@ onready var label = get_node("Introtext")
 onready var world = load("res://scenes/Game.tscn").instance()
 
 func _ready():
-	label.text = "Bill realised that robbing the federal bank was probably not the greatest idea he ever had, especially with the sheriff and his lackeys lurking in the nearby saloon."
+	label.text = "Bill realised that robbing the federal bank was probably not his greatest idea, considering the sheriff and his lackeys were having their break in the nearby saloon."
 
 func _process(_delta):
 	if !$AnimationPlayer.is_playing() and Input.is_action_pressed("ui_accept"):

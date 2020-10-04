@@ -17,6 +17,41 @@
 [ext_resource path="res://stam/hat_down.png" type="Texture" id=15]
 [ext_resource path="res://stam/hat.png" type="Texture" id=16]
 
+[sub_resource type="Animation" id=4]
+resource_name = "BadApple"
+length = 2.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("BadApple:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 399.418, -0.25, 0, 0.25, 0, 402.645, -0.25, 0, 0.12, 4.97662, 434.543, -0.19, -2.48834, 0.132775, 0, 418.703, -0.115311, 2.87997, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 1.5, 2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("BadApple:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 65.0567, -0.25, 0, 0.63445, 1.20665, 235.919, -0.14, -44.928, 0.086962, -22.5446, 235.896, -0.109808, -25.0886, 0.0954548, -10.4306, 235.896, -0.110646, -10.767, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 1.5, 2 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("BadApple:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -86.656, -0.25, 0, 0.147608, 40.8299, 113.841, -0.119138, -68.4288, 0.12811, -39.3985, 1.86658, -0.231937, 35.2512, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 1.5, 2 )
+}
+
 [sub_resource type="Animation" id=1]
 resource_name = "BirdBee"
 
@@ -111,6 +146,40 @@ tracks/3/keys = {
 "values": [ 0.0, 180.0 ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "Hive"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Hive:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 438.313, -0.25, 0, 0.0631659, -1.29794, 433.756, -0.0471792, 1.25781, 0.0404381, 2.82635, 441.559, -0.0289977, -2.70441, 0.0280554, -2.81259, 433.554, -0.0413805, 2.97482, 0.0380864, 3.08301, 441.397, -0.0354247, -2.65033, 0.0379293, -2.75848, 433.77, -0.0335442, 2.97482, 0.0776318, 2.40152, 438.097, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.3, 0.4, 0.5, 0.6, 1.2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Hive:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 115.915, -0.25, 0, 0.25, 0, 115.885, -0.25, 0, 0.392232, 0.555458, 244.262, 0, -25.0444, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.2, 2 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Hive:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1.9496, -0.25, 0, 0.322076, 1.29615, 142.135, -0.00513458, -97.2222, 0.25, 0 ),
+"times": PoolRealArray( 1.2, 2 )
+}
+
 [node name="Game" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -157,17 +226,24 @@ texture = ExtResource( 13 )
 
 [node name="Anime" type="AnimationPlayer" parent="."]
 autoplay = "SceneFadeIn"
+anims/BadApple = SubResource( 4 )
 anims/BirdBee = SubResource( 1 )
 anims/BirdHat = SubResource( 2 )
 anims/HatDrop = SubResource( 3 )
+anims/Hive = SubResource( 5 )
 
 [node name="Hive" parent="." instance=ExtResource( 7 )]
-position = Vector2( 432.75, 91.75 )
+position = Vector2( 438.097, 226.754 )
+rotation = 1.79839
 
 [node name="BadApple" type="Node2D" parent="."]
-position = Vector2( 399.418, 76.2813 )
+position = Vector2( 399.418, 65.0567 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="BadApple"]
+position = Vector2( 0.683716, 1.24489 )
 texture = ExtResource( 14 )
 [connection signal="animation_finished" from="Anime" to="." method="_on_Anime_animation_finished"]
 

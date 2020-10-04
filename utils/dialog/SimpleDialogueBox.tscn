@@ -1,22 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/fonts/mini_pixel-7.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://utils/dialog/SimpleDialogueBox.gd" type="Script" id=2]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.933333, 0.952941, 1, 1 )
-border_width_left = 5
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 5
-border_color = Color( 0, 0, 0, 1 )
-border_blend = true
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
@@ -26,10 +13,10 @@ font_data = ExtResource( 1 )
 margin_left = -150.0
 margin_top = -50.0
 margin_right = 150.0
+margin_bottom = -20.0
 size_flags_vertical = 14
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 align = 1
 valign = 1
 autowrap = true
@@ -37,3 +24,4 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+speed = 0.01
