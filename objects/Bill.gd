@@ -1,7 +1,7 @@
 extends "ClickObject.gd"
 
-var desc = "This is Bill. He seems a bit anxious."
-var emotes = ["Idle", "Wink", "LookUp", "LookDown", "LookLeft", "LookRight"]
+onready var desc = "This is Bill. He seems a bit anxious."
+onready var emotes = ["Idle", "Wink", "LookUp", "LookDown", "LookLeft", "LookRight"]
 
 func _on_Timer_timeout():
 	var chance = randi()%100+1

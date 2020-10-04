@@ -2,7 +2,7 @@ extends Node2D
 
 export var state = 0
 onready var label = get_node("Introtext")
-var world = load("res://scenes/Game.tscn").instance()
+onready var world = load("res://scenes/Game.tscn").instance()
 
 func _ready():
 	label.text = "Bill knew that robbing the federal bank was probably not the greatest idea he ever had. Especially with the sheriff and his lackeys lurking nearby." 
