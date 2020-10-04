@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://objects/Horse.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Cat.tscn" type="PackedScene" id=2]
@@ -17,7 +17,7 @@
 [ext_resource path="res://stam/hat_down.png" type="Texture" id=15]
 [ext_resource path="res://stam/hat.png" type="Texture" id=16]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=1]
 resource_name = "BadApple"
 length = 2.0
 loop = true
@@ -52,11 +52,24 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1, 1.5, 2 )
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "BirdBee"
-
 [sub_resource type="Animation" id=2]
-resource_name = "BirdHat"
+resource_name = "BarrelRoll"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Barrel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 22.0424, 132.479 ), Vector2( 28.6496, 143.098 ), Vector2( 48.4203, 216.383 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+
+[sub_resource type="Animation" id=4]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Bird:position")
@@ -65,10 +78,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.4, 1.4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 118.526, 139.974 ), Vector2( 319.39, 247.44 ), Vector2( 503.091, 184.654 ) ]
+"values": [ Vector2( 118.526, 139.974 ), Vector2( 118.526, 139.974 ), Vector2( 319.39, 247.44 ), Vector2( 503.091, 184.654 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Hat:position")
@@ -77,7 +90,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1, 1.9, 5 ),
+"times": PoolRealArray( 0, 1.4, 1.9, 5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 310.509, 253.024 ), Vector2( 310.509, 253.024 ), Vector2( 355.688, 248.815 ), Vector2( 499.363, 199.427 ) ]
@@ -89,13 +102,13 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1, 1.9, 5 ),
+"times": PoolRealArray( 0, 1.4, 1.9, 5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 180.0, 180.0, 133.5, 114.9 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Hat:position")
@@ -146,8 +159,7 @@ tracks/3/keys = {
 "values": [ 0.0, 180.0 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "Hive"
+[sub_resource type="Animation" id=6]
 length = 2.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Hive:position:x")
@@ -206,35 +218,34 @@ position = Vector2( 345.814, 164.92 )
 position = Vector2( 294.448, 56.9386 )
 
 [node name="Pistol" parent="." instance=ExtResource( 9 )]
-position = Vector2( 169.373, 216.488 )
+position = Vector2( 161.495, 216.862 )
 
 [node name="Barrel" parent="." instance=ExtResource( 10 )]
-position = Vector2( 23.1338, 133.423 )
+position = Vector2( 22.0424, 132.479 )
 
 [node name="Mirror" parent="." instance=ExtResource( 11 )]
-visible = false
 position = Vector2( 350.123, 235.197 )
 
 [node name="Bird" parent="." instance=ExtResource( 12 )]
 position = Vector2( 118.526, 139.974 )
 
 [node name="Mock" type="Sprite" parent="."]
-visible = false
 modulate = Color( 1, 1, 1, 0.32549 )
 position = Vector2( 240, 135 )
 texture = ExtResource( 13 )
 
 [node name="Anime" type="AnimationPlayer" parent="."]
 autoplay = "SceneFadeIn"
-anims/BadApple = SubResource( 4 )
-anims/BirdBee = SubResource( 1 )
-anims/BirdHat = SubResource( 2 )
-anims/HatDrop = SubResource( 3 )
-anims/Hive = SubResource( 5 )
+anims/BadApple = SubResource( 1 )
+anims/BarrelRoll = SubResource( 2 )
+anims/BirdBee = SubResource( 3 )
+anims/BirdHat = SubResource( 4 )
+anims/HatDrop = SubResource( 5 )
+anims/Hive = SubResource( 6 )
 
 [node name="Hive" parent="." instance=ExtResource( 7 )]
-position = Vector2( 438.097, 226.754 )
-rotation = 1.79839
+position = Vector2( 438.313, 115.915 )
+rotation = 0.0340269
 
 [node name="BadApple" type="Node2D" parent="."]
 position = Vector2( 399.418, 65.0567 )

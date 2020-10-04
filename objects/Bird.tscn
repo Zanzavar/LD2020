@@ -141,13 +141,11 @@ tracks/2/keys = {
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -0.181164, -3.75444 )
+position = Vector2( -0.0834274, 0.0834274 )
 texture = ExtResource( 4 )
 hframes = 7
-frame = 2
 
 [node name="Clickable" parent="." instance=ExtResource( 1 )]
-visible = false
 
 [node name="Anime" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
