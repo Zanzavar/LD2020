@@ -1,3 +1,3 @@
 extends "res://objects/ClickObject.gd"
 
-onready var desc = "Is this a bag?"
+onready var desc = "That’s a fashionable bag."
