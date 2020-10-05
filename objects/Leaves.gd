@@ -10,3 +10,4 @@ func on_Click():
 		var beam1 = get_parent().get_node("Beam1")
 		beam1.visible = true
 		turn()
+		unturn()

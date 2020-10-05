@@ -6,3 +6,4 @@ func on_Click():
 	if !$Crow.playing and allowed():
 		$Crow.play()
 		turn()
+		unturn()

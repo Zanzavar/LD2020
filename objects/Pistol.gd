@@ -8,3 +8,4 @@ func on_Click():
 		$Gunshot.play()
 		hit_barrel = get_parent().pistol_shoot()
 		turn()
+		unturn()

@@ -12,7 +12,7 @@ func on_Click():
 		else:
 			$Bill2.play()
 		turn()
-
+		unturn()
 
 func _on_Timer_timeout():
 	if !dead:
