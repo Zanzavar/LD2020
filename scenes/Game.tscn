@@ -1,7 +1,7 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://objects/Horse.tscn" type="PackedScene" id=1]
-[ext_resource path="res://objects/Cat.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/Mouse.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Game.gd" type="Script" id=3]
 [ext_resource path="res://objects/Hat.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/Bill.tscn" type="PackedScene" id=5]
@@ -19,6 +19,13 @@
 [ext_resource path="res://objects/Clickable.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scenes/BadApple.gd" type="Script" id=18]
 [ext_resource path="res://assets/fonts/mini_pixel-7.ttf" type="DynamicFontData" id=19]
+[ext_resource path="res://assets/sounds/retro_drop.wav" type="AudioStream" id=20]
+[ext_resource path="res://assets/sounds/item_drop.wav" type="AudioStream" id=21]
+[ext_resource path="res://assets/sounds/crow.wav" type="AudioStream" id=22]
+[ext_resource path="res://stam/rope.png" type="Texture" id=23]
+[ext_resource path="res://objects/Leaves.tscn" type="PackedScene" id=24]
+[ext_resource path="res://stam/tree.png" type="Texture" id=25]
+[ext_resource path="res://objects/Clock.tscn" type="PackedScene" id=26]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Apple"
@@ -53,6 +60,32 @@ tracks/2/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -156.731, -0.176432, 36, 0.113342, -86.4, -454.811, -0.16704, 112.32, 0.125785, 48.96, -365.531, -0.127145, -4.32001, 0.25, 0 ),
 "times": PoolRealArray( 0, 1, 1.5, 2 )
 }
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 20 )
+}, {
+"end_offset": 0.250626,
+"start_offset": 0.0,
+"stream": ExtResource( 21 )
+}, {
+"end_offset": 0.252664,
+"start_offset": 0.0,
+"stream": ExtResource( 21 )
+}, {
+"end_offset": 0.254701,
+"start_offset": 0.0,
+"stream": ExtResource( 21 )
+} ],
+"times": PoolRealArray( 0, 1, 1.5, 2 )
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "BadApple"
@@ -74,7 +107,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 65.0567, -0.25, 0, 0.63445, 1.20665, 235.919, -0.14, -44.928, 0.086962, -22.5446, 235.896, -0.109808, -25.0886, 0.0954548, -10.4306, 235.896, -0.110646, -10.767, 0.25, 0 ),
+"points": PoolRealArray( 65.0567, -0.25, 0, 0.63445, 1.20665, 229.777, -0.14, -44.928, 0.086962, -22.5446, 229.754, -0.109808, -25.0886, 0.0954548, -10.4306, 229.352, -0.110646, -10.767, 0.25, 0 ),
 "times": PoolRealArray( 0, 1, 1.5, 2 )
 }
 tracks/2/type = "bezier"
@@ -85,6 +118,32 @@ tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -156.731, -0.176432, 36, 0.113342, -86.4, -454.811, -0.16704, 112.32, 0.125785, 48.96, -365.531, -0.127145, -4.32001, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 1.5, 2 )
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 20 )
+}, {
+"end_offset": 0.305642,
+"start_offset": 0.0,
+"stream": ExtResource( 21 )
+}, {
+"end_offset": 0.268965,
+"start_offset": 0.0,
+"stream": ExtResource( 21 )
+}, {
+"end_offset": 0.228212,
+"start_offset": 0.0,
+"stream": ExtResource( 21 )
+} ],
 "times": PoolRealArray( 0, 1, 1.5, 2 )
 }
 
@@ -111,10 +170,107 @@ tracks/1/keys = {
 "points": PoolRealArray( 132.551, -0.25, 0, 0.0672412, 0.233322, 137.784, -0.0658318, 0, 0.0482744, -17, 191.784, -0.131978, -89.5496, 0.102347, -44.5496, 205.624, -0.0755528, -28, 0.0752304, -14.48, 214.624, -0.0432652, -14.4, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.4, 1, 1.4, 1.6 )
 }
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.287303,
+"start_offset": 0.0,
+"stream": ExtResource( 21 )
+}, {
+"end_offset": 0.403447,
+"start_offset": 0.0,
+"stream": ExtResource( 21 )
+}, {
+"end_offset": 0.466613,
+"start_offset": 0.0,
+"stream": ExtResource( 21 )
+}, {
+"end_offset": 0.466613,
+"start_offset": 0.0,
+"stream": ExtResource( 21 )
+} ],
+"times": PoolRealArray( 0.4, 1, 1.4, 1.6 )
+}
 
 [sub_resource type="Animation" id=4]
 
 [sub_resource type="Animation" id=5]
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Bird:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 118, -0.25, 0, 0.51144, 5.38943, 175.644, -0.25, 0, 0.479306, 2.48833, 348.777, -0.25, 0, 0.25, 0, 539.911, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 2, 3 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Bird:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 139.854, -0.25, 0, 0.25, 0, 108.46, -0.25, 0, 0.25, 0, 230.466, -0.25, 0, 0.25, 0, 177.609, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 2, 3 )
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 22 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 22 )
+} ],
+"times": PoolRealArray( 0, 2 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Hat:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 350, -0.25, 0, 0.25, 0, 540.249, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 2, 3 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Hat:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 247, -0.25, 0, 0.25, 0, 198.338, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 2, 3 )
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Hat/Sprite:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 19.6983 ),
+"update": 1,
+"values": [ ExtResource( 15 ) ]
+}
 
 [sub_resource type="Animation" id=6]
 length = 2.2
@@ -160,6 +316,20 @@ tracks/3/keys = {
 "update": 1,
 "values": [ ExtResource( 16 ), ExtResource( 15 ) ]
 }
+tracks/4/type = "audio"
+tracks/4/path = NodePath("AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 21 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="Animation" id=7]
 length = 2.0
@@ -193,43 +363,155 @@ tracks/2/keys = {
 "points": PoolRealArray( 1.9496, -0.25, 0, 0.322076, 1.29615, 142.135, -0.00513458, -97.2222, 0.25, 0 ),
 "times": PoolRealArray( 1.2, 2 )
 }
+tracks/3/type = "audio"
+tracks/3/path = NodePath("Hive/Drop")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 20 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 21 )
+} ],
+"times": PoolRealArray( 1.2, 2 )
+}
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="Animation" id=10]
+resource_name = "HorseMoving"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Horse:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 253.961, 177.345 ), Vector2( 330.415, 177.345 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Mirror"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Mirror:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 346.587, -0.25, 0, 0.25, 0, 347.47, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Mirror:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 167.668, -0.25, 0, 0.185423, -47.2683, 242.744, -0.176805, -106.464, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Mirror:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 45, -0.25, 0, 0.25, 0, -533.744, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Mirror:show_behind_parent")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="DynamicFont" id=9]
 font_data = ExtResource( 19 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="Mock" type="Sprite" parent="."]
+position = Vector2( 240, 135 )
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Rope" type="Sprite" parent="."]
+position = Vector2( 237.988, 77.868 )
+texture = ExtResource( 23 )
+hframes = 20
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Tree" type="Sprite" parent="."]
+position = Vector2( 240.192, 134.954 )
+texture = ExtResource( 25 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Leaves" parent="." instance=ExtResource( 24 )]
+position = Vector2( 416.351, 37.0859 )
+
 [node name="Apple" parent="." instance=ExtResource( 6 )]
-position = Vector2( 294.995, 216.524 )
-rotation = -1.11857
+position = Vector2( 317.81, 152.169 )
+rotation = -2.02749
+
+[node name="Bag" parent="." instance=ExtResource( 8 )]
+position = Vector2( 346.079, 160.682 )
 
 [node name="Horse" parent="." instance=ExtResource( 1 )]
 position = Vector2( 253.961, 177.345 )
 
 [node name="Bill" parent="." instance=ExtResource( 5 )]
-position = Vector2( 238.044, 129.616 )
+position = Vector2( 238.044, 129.528 )
 
-[node name="Cat" parent="." instance=ExtResource( 2 )]
+[node name="Mouse" parent="." instance=ExtResource( 2 )]
 position = Vector2( -37.6568, 241.562 )
 
 [node name="Hat" parent="." instance=ExtResource( 4 )]
-position = Vector2( 236.322, 102.535 )
+position = Vector2( 350, 247 )
 
-[node name="Bag" parent="." instance=ExtResource( 8 )]
-position = Vector2( 345.814, 164.92 )
+[node name="Sprite" parent="Hat" index="1"]
+position = Vector2( 0.220505, -0.0886993 )
+texture = ExtResource( 15 )
+
+[node name="Mirror" parent="." instance=ExtResource( 11 )]
+show_behind_parent = true
+position = Vector2( 346.587, 167.668 )
+rotation = 0.785398
 
 [node name="Pistol" parent="." instance=ExtResource( 9 )]
 position = Vector2( 169.373, 216.488 )
 
 [node name="Barrel" parent="." instance=ExtResource( 10 )]
-position = Vector2( 22.1744, 132.551 )
+position = Vector2( 68.624, 214.624 )
 
-[node name="Mirror" parent="." instance=ExtResource( 11 )]
-position = Vector2( 350.123, 235.197 )
+[node name="Clock" parent="." instance=ExtResource( 26 )]
+position = Vector2( 126.953, 161.698 )
 
 [node name="Bird" parent="." instance=ExtResource( 12 )]
-position = Vector2( 118, 138 )
+position = Vector2( 124.236, 110.9 )
 
 [node name="Hive" parent="." instance=ExtResource( 7 )]
 position = Vector2( 438.313, 115.915 )
@@ -248,15 +530,6 @@ texture = ExtResource( 14 )
 
 [node name="Clickable" parent="BadApple" instance=ExtResource( 17 )]
 
-[node name="Mock" type="Sprite" parent="."]
-visible = false
-modulate = Color( 1, 1, 1, 0.32549 )
-position = Vector2( 240, 135 )
-texture = ExtResource( 13 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Anime" type="AnimationPlayer" parent="."]
 autoplay = "SceneFadeIn"
 anims/Apple = SubResource( 1 )
@@ -266,6 +539,8 @@ anims/BirdBee = SubResource( 4 )
 anims/BirdHat = SubResource( 5 )
 anims/HatDrop = SubResource( 6 )
 anims/Hive = SubResource( 7 )
+anims/HorseMoving = SubResource( 10 )
+anims/Mirror = SubResource( 8 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -274,12 +549,20 @@ one_shot = true
 margin_top = 275.0
 margin_right = 480.0
 margin_bottom = 291.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+volume_db = -11.387
 [connection signal="animation_finished" from="Anime" to="." method="_on_Anime_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="Hat"]
+
+[editable path="Mirror"]
+
+[editable path="Hive"]

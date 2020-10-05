@@ -31,7 +31,10 @@ func mouse_comes():
 func horse_leaves(): if !$Mirror.broken: pass
 
 func pistol_shoot(): 
-	if $Barrel.dropped: return true; return false
+	if $Barrel.dropped and !$Barrel.shot: 
+		$Barrel.shot = true
+		$Barrel/Anime.play("Whiskey")
+		#return true; return false
 	
 func horse_leaves_to_eat():
 		if !$Horse.ate:
@@ -51,6 +54,12 @@ func _on_Anime_animation_finished(anim_name):
 				$Bird/Anime.play("Flight")
 		"Apple":
 			$Horse/Anime.play("Eating")
+		"BadApple":
+			$Anime.play("HorseMoving")
+			$Horse/Anime.play("MoveToApple")
+		"HorseMoving":
+			$Horse/Anime.play("Eating")
+			$Bill/Anime.play("Death")
 
 func _on_Timer_timeout():
 	advancing = false

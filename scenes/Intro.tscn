@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/fonts/mini_pixel-7.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/Intro.gd" type="Script" id=3]
@@ -37,33 +37,6 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-step = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Introtext:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Arrow:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
 [sub_resource type="Animation" id=4]
 step = 0.5
 tracks/0/type = "value"
@@ -76,7 +49,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "Fortunately at the last moment Indians chased his captors away. But Bill was left alone, tied on his horse and stuck with a tight loop around his neck." ]
+"values": [ "Fortunately at the last moment Indians chased his captors away. But Bill was left alone, tied on his horse and stuck with a tight loop around his neck. " ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Introtext:modulate")
@@ -88,7 +61,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -103,7 +76,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "“Help!” he shouted but his voice went unheard for miles. Soon he realised his hide was hanging by the threads of an extremely lucky sequence of events..." ]
+"values": [ "“Help!” he shouted but his voice went unheard for miles. His life was now hanging by the threads of an extremely lucky sequence of events..." ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Introtext:modulate")
@@ -115,31 +88,18 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=6]
 length = 2.0
 loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Arrow:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
 
 [sub_resource type="DynamicFont" id=7]
 size = 20
 font_data = ExtResource( 1 )
 
 [node name="Intro" type="Node2D"]
-modulate = Color( 1, 1, 1, 0 )
 script = ExtResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -151,7 +111,6 @@ autostart = true
 autoplay = "FadeIn"
 anims/FadeIn = SubResource( 1 )
 anims/FadeOut = SubResource( 2 )
-anims/Text1 = SubResource( 3 )
 anims/Text2 = SubResource( 4 )
 anims/Text3 = SubResource( 5 )
 next/Text2 = "ArrowAnimate"
@@ -162,12 +121,13 @@ anims/ArrowAnimation = SubResource( 6 )
 next/ArrowAnimation = "ArrowAnimation"
 
 [node name="Introtext" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 42.8062
 margin_top = 156.176
 margin_right = 442.806
 margin_bottom = 245.176
 custom_fonts/font = SubResource( 7 )
-text = "“Help!” he shouted but his voice went unheard for miles. Soon he realised his hide was hanging by the threads of an extremely lucky sequence of events..."
+text = "“Help!” he shouted but his voice went unheard for miles. His life was now hanging by the threads of an extremely lucky sequence of events..."
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
