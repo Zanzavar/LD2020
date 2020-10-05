@@ -42,7 +42,11 @@ func horse_leaves_to_eat():
 		if !$Horse.ate:
 			pass #Animation να πάει τρώει.
 
-func mouse_scares_horse(): pass #Animation
+func mouse_scares_horse():
+	$Anime.play("MouseHunting")
+	$Mouse/Anime.play("Running")
+	$Anime.play("HorseScared")
+	$Horse/Anime.play("Walk")
 func mouse_sleeps():
 	$Anime.play("MouseWhiskey")
 	$Mouse/Anime.play("Running")
@@ -63,7 +67,7 @@ func _on_Anime_animation_finished(anim_name):
 			$Horse/Anime.play("Eating")
 		"BadApple":
 			$Anime.play("HorseMoving")
-			$Horse/Anime.play("MoveToApple")				
+			$Horse/Anime.play("Walk")
 		"HorseMoving":
 			$Horse/Anime.play("Eating")
 			end_of_life()
@@ -73,7 +77,7 @@ func _on_Anime_animation_finished(anim_name):
 				$Mirror.desc = "TODO MANOLI // από δω κάτω μπορείς να παίξεις και τον ήχο"
 			else: $Beam2.visible = true
 			continue
-		_: 
+		_:
 			advancing = false
 			check_event()
 
