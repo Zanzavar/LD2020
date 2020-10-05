@@ -374,6 +374,7 @@ position = Vector2( -1.12373, -2.99661 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 4 )
 hframes = 7
+frame = 1
 
 [node name="Anime" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
