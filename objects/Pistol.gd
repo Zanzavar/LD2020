@@ -6,6 +6,8 @@ onready var desc = "Being anti-gun is hip these days."
 func on_Click(): 
 	if !$Gunshot.playing and allowed():
 		$Gunshot.play()
-		hit_barrel = get_parent().pistol_shoot()
+		if get_parent().get_node("Barrel").dropped:
+			get_parent().pistol_shoot()
+			hit_barrel = true
 		turn()
 		unturn()
