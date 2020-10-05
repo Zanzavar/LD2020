@@ -21,11 +21,17 @@ func advance():
 
 func check_event():
 		match turn:
-			3: apple_drops()
-			5: mouse_comes()
-			7: horse_leaves()
+			3: 
+				apple_drops()
+				turn += 1
+			6: 
+				mouse_comes()
+				turn += 1
+			9: 
+				horse_leaves()
+				turn += 1
 
-func apple_drops(): if !$Apple.dropped: $Anime.play("BadApple")
+func apple_drops(): if !$BadApple.dropped: $Anime.play("BadApple")
 func mouse_comes():
 	if !$Pistol.hit_barrel: mouse_sleeps()
 	else: mouse_scares_horse()
@@ -73,13 +79,12 @@ func _on_Anime_animation_finished(anim_name):
 			end_of_life()
 		"Mirror":
 			if !$Hat.dropped:
-				$Mirror/Sprite.texture = "res://stam/monday/broken_mirror.png"
+				$Mirror/Sprite.texture = load("res://stam/monday/broken_mirror.png")
 				$Mirror.desc = "TODO MANOLI // από δω κάτω μπορείς να παίξεις και τον ήχο"
+				$Hat.z_index = 1
 			else: $Beam2.visible = true
 			continue
-		_:
-			advancing = false
-			check_event()
+		_: $Timer.start()
 
 func _on_Timer_timeout():
 	advancing = false
