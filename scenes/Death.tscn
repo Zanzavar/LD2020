@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/sprites/pixel.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/mini_pixel-7.ttf" type="DynamicFontData" id=2]
@@ -9,6 +9,8 @@
 [sub_resource type="DynamicFont" id=1]
 size = 20
 font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
@@ -28,11 +30,12 @@ region_rect = Rect2( 0, 0, 300, 100 )
 region_filter_clip = true
 
 [node name="Inscription" type="Label" parent="."]
-margin_left = -136.191
-margin_top = -25.4803
-margin_right = 138.809
-margin_bottom = 17.5197
+margin_left = -136.0
+margin_top = -29.0
+margin_right = 139.0
+margin_bottom = -4.0
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.333333, 0.333333, 0.333333, 1 )
 text = "dsfsdffdsdf"
 align = 1
 __meta__ = {
@@ -45,8 +48,10 @@ margin_left = -50.1775
 margin_top = -9.16061
 margin_right = 49.8225
 margin_bottom = 16.8394
+custom_styles/focus = SubResource( 3 )
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 1, 0.952941, 0.313726, 1 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.858824, 0.729412, 0.309804, 1 )
 text = "Try again"
 flat = true
 __meta__ = {
