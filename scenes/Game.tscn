@@ -400,7 +400,7 @@ tracks/0/keys = {
 "values": [ Vector2( 253.961, 177.345 ), Vector2( 330.415, 177.345 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=9]
 resource_name = "HorseScared"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Horse:position")
@@ -415,7 +415,7 @@ tracks/0/keys = {
 "values": [ Vector2( 253.961, 177.345 ), Vector2( 572.74, 177.345 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Mirror:position:x")
 tracks/0/interp = 1
@@ -459,11 +459,10 @@ tracks/3/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=11]
 resource_name = "MouseHunting"
 
-[sub_resource type="Animation" id=10]
-resource_name = "MouseWhiskey"
+[sub_resource type="Animation" id=12]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Mouse:position")
 tracks/0/interp = 1
@@ -477,7 +476,7 @@ tracks/0/keys = {
 "values": [ Vector2( -30.5296, 219.735 ), Vector2( 78.1602, 221.071 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=13]
 resource_name = "RopeBurning"
 length = 1.9
 tracks/0/type = "value"
@@ -493,7 +492,7 @@ tracks/0/keys = {
 "values": [ 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ]
 }
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=14]
 font_data = ExtResource( 19 )
 
 [node name="Game" type="Node2D"]
@@ -589,11 +588,11 @@ anims/BirdHat = SubResource( 5 )
 anims/HatDrop = SubResource( 6 )
 anims/Hive = SubResource( 7 )
 anims/HorseMoving = SubResource( 8 )
-anims/HorseScared = SubResource( 12 )
-anims/Mirror = SubResource( 9 )
-anims/MouseHunting = SubResource( 13 )
-anims/MouseWhiskey = SubResource( 10 )
-anims/RopeBurning = SubResource( 14 )
+anims/HorseScared = SubResource( 9 )
+anims/Mirror = SubResource( 10 )
+anims/MouseHunting = SubResource( 11 )
+anims/MouseWhiskey = SubResource( 12 )
+anims/RopeBurning = SubResource( 13 )
 
 [node name="DescriptionBack" type="Sprite" parent="."]
 modulate = Color( 0.0941176, 0.0862745, 0.0862745, 1 )
@@ -607,7 +606,7 @@ region_rect = Rect2( 0, 0, 480, 30 )
 margin_top = 275.0
 margin_right = 480.0
 margin_bottom = 291.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 14 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -632,6 +631,10 @@ texture = ExtResource( 28 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 [connection signal="animation_finished" from="Anime" to="." method="_on_Anime_animation_finished"]
 
 [editable path="Hat"]
