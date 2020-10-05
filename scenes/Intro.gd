@@ -1,11 +1,10 @@
 extends Node2D
 
 export var state = 0
-onready var label = get_node("Introtext")
 onready var world = load("res://scenes/Game.tscn").instance()
 
 func _ready():
-	label.text = "Bill realised that robbing the federal bank was probably not his greatest idea, considering the sheriff and his lackeys were having their break in the nearby saloon."
+	$Introtext.text = "Bill realised that robbing the federal bank was probably not his greatest idea, considering the sheriff and his lackeys were having their break in the nearby saloon."
 
 func _process(_delta):
 	if !$AnimationPlayer.is_playing() and Input.is_action_pressed("ui_accept"):

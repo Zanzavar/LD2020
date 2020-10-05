@@ -15,11 +15,12 @@ onready var advancing = false
 func advance():
 	if !advancing:
 		advancing = true
+		$Clock.move_index()
 		$Timer.start()
 		match turn:
-			3: apple_drops()
-			5: mouse_comes()
-			7: horse_leaves()
+			2: apple_drops()
+			4: mouse_comes()
+			6: horse_leaves()
 		turn += 1
 		print(turn)
 		
@@ -42,7 +43,9 @@ func horse_leaves_to_eat():
 	
 func mouse_scares_horse(): pass #Animation
 func mouse_sleeps(): pass #Animation
-func end_of_life(): pass #?????????
+func end_of_life(): 
+	$Bill/Anime.play("Death")
+	$Bill.dead = true
 
 func _on_Anime_animation_finished(anim_name):
 	match anim_name:
@@ -59,7 +62,7 @@ func _on_Anime_animation_finished(anim_name):
 			$Horse/Anime.play("MoveToApple")
 		"HorseMoving":
 			$Horse/Anime.play("Eating")
-			$Bill/Anime.play("Death")
+			end_of_life()
 
 func _on_Timer_timeout():
 	advancing = false
