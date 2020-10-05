@@ -17,9 +17,6 @@ font_data = ExtResource( 2 )
 [node name="Death" type="Node2D"]
 position = Vector2( 241.726, 276.038 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
@@ -27,18 +24,17 @@ position = Vector2( 0, -11.2053 )
 scale = Vector2( 1, 0.704458 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 240, 100 )
+region_rect = Rect2( 0, 0, 300, 100 )
 region_filter_clip = true
 
 [node name="Inscription" type="Label" parent="."]
-margin_left = -102.803
-margin_top = -25.7953
-margin_right = 101.197
-margin_bottom = -4.79526
+margin_left = -136.191
+margin_top = -25.4803
+margin_right = 138.809
+margin_bottom = 17.5197
 custom_fonts/font = SubResource( 1 )
-text = "He was always stuck in a loop."
+text = "dsfsdffdsdf"
 align = 1
-autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""

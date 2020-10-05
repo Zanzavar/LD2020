@@ -736,6 +736,7 @@ position = Vector2( 126.953, 161.698 )
 position = Vector2( 124.997, 110.922 )
 
 [node name="Bees" parent="." instance=ExtResource( 30 )]
+visible = false
 position = Vector2( 435.515, 245.819 )
 
 [node name="Hive" parent="." instance=ExtResource( 7 )]
