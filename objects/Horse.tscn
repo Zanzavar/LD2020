@@ -73,7 +73,7 @@ tracks/4/keys = {
 "start_offset": 0.0,
 "stream": ExtResource( 6 )
 } ],
-"times": PoolRealArray( 0.5 )
+"times": PoolRealArray( 0.1 )
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Sprite:hframes")
@@ -86,6 +86,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 5 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Snort:stream")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ), ExtResource( 4 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -137,6 +149,18 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 1 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Snort:stream")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -195,10 +219,9 @@ tracks/3/keys = {
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 7 )
-vframes = 3
-hframes = 3
-frame = 7
+texture = ExtResource( 5 )
+hframes = 5
+frame = 4
 
 [node name="Clickable" parent="." instance=ExtResource( 2 )]
 position = Vector2( 37.283, -37.283 )

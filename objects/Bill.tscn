@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/sounds/bill1.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/sounds/bill2.wav" type="AudioStream" id=6]
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=1]
 resource_name = "Death"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
@@ -58,8 +58,7 @@ tracks/3/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 6 ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "Idle"
+[sub_resource type="Animation" id=2]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -109,8 +108,7 @@ tracks/3/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "LookDown"
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -160,8 +158,7 @@ tracks/3/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "LookLeft"
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -211,8 +208,7 @@ tracks/3/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "LookRight"
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -262,8 +258,7 @@ tracks/3/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "LookUp"
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -313,8 +308,7 @@ tracks/3/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "Wink"
+[sub_resource type="Animation" id=7]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -374,17 +368,16 @@ position = Vector2( -1.12373, -2.99661 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 4 )
 hframes = 7
-frame = 1
 
 [node name="Anime" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
-anims/Death = SubResource( 7 )
-anims/Idle = SubResource( 1 )
-anims/LookDown = SubResource( 2 )
-anims/LookLeft = SubResource( 3 )
-anims/LookRight = SubResource( 4 )
-anims/LookUp = SubResource( 5 )
-anims/Wink = SubResource( 6 )
+anims/Death = SubResource( 1 )
+anims/Idle = SubResource( 2 )
+anims/LookDown = SubResource( 3 )
+anims/LookLeft = SubResource( 4 )
+anims/LookRight = SubResource( 5 )
+anims/LookUp = SubResource( 6 )
+anims/Wink = SubResource( 7 )
 next/Idle = "Idle"
 next/LookDown = "Idle"
 next/LookLeft = "LookRight"
