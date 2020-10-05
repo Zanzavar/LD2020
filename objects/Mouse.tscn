@@ -5,7 +5,7 @@
 [ext_resource path="res://stam/rat_running.png" type="Texture" id=3]
 [ext_resource path="res://stam/rat_drunk.png" type="Texture" id=4]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "Drunk"
 loop = true
 tracks/0/type = "value"
@@ -45,8 +45,7 @@ tracks/2/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "Running"
+[sub_resource type="Animation" id=2]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -109,5 +108,5 @@ hframes = 5
 
 [node name="Anime" type="AnimationPlayer" parent="."]
 autoplay = "Running"
-anims/Drunk = SubResource( 2 )
-anims/Running = SubResource( 1 )
+anims/Drunk = SubResource( 1 )
+anims/Running = SubResource( 2 )
