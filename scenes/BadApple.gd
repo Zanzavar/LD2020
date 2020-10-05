@@ -1,4 +1,9 @@
-extends "res://objects/ClickObject.gd"
+extends "res://objects/Clickable.gd"
 
-var desc = "At least I won't get hungry."
-func on_Click(): get_parent().apple_drops()
+onready var desc = "At least I won't get hungry."
+onready var dropped = false
+func on_Click(): 
+	if !dropped and allowed():
+		get_parent().apple_drops()
+		dropped = true
+		turn()

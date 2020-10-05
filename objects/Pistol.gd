@@ -7,4 +7,4 @@ func on_Click():
 	if !$Gunshot.playing and allowed():
 		$Gunshot.play()
 		hit_barrel = get_parent().pistol_shoot()
-	
+		turn()

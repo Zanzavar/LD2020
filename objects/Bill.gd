@@ -5,12 +5,13 @@ onready var emotes = ["Idle", "Wink", "LookUp", "LookDown", "LookLeft", "LookRig
 onready var dead = false
 
 func on_Click():
-	if !$Bill1.playing or !$Bill1.playing or !dead and allowed():
+	if (!$Bill1.playing or !$Bill2.playing or !dead) and allowed():
 		var chance = randi()%100+1
 		if (chance < 50):
 			$Bill1.play()
 		else:
 			$Bill2.play()
+		turn()
 
 
 func _on_Timer_timeout():
