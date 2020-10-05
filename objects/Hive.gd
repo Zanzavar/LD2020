@@ -8,3 +8,4 @@ func on_Click():
 		dropped = true
 		$Buzz.play()
 		get_parent().get_node("Anime").play("Hive")
+		turn()

@@ -1,4 +1,10 @@
-extends Node2D
+extends "Clickable.gd"
 
 
-func move_index(): $Index.frame += 1
+onready var desc = "Mas telionei o xronos"
+func move_index(): 
+	if $Index.frame == 7:
+		$Index.frame = 0
+	else: $Index.frame += 1
+	
+func on_Click(): if allowed(): turn()

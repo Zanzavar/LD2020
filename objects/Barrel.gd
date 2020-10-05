@@ -1,4 +1,4 @@
-extends "res://objects/ClickObject.gd"
+extends "Clickable.gd"
 
 onready var dropped = false
 onready var shot = false
@@ -9,3 +9,4 @@ func on_Click():
 		dropped = true
 		$Anime.play("Roll")
 		get_parent().get_node("Anime").play("BarrelRoll")
+		turn()

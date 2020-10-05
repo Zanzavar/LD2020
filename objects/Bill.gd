@@ -11,6 +11,7 @@ func on_Click():
 			$Bill1.play()
 		else:
 			$Bill2.play()
+		turn()
 
 
 func _on_Timer_timeout():
