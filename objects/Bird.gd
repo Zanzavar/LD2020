@@ -1,5 +1,8 @@
-extends "res://objects/ClickObject.gd"
+extends "res://objects/Clickable.gd"
 
 var desc = "This crow eyes me suspiciously."
 
-func on_Click(): pass
+func on_Click(): 
+	if !$Crow.playing and allowed():
+		$Crow.play()
+		turn()

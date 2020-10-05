@@ -1,6 +1,7 @@
 extends "res://objects/ClickObject.gd"
 
 onready var dropped = false
+onready var shot = false
 onready var desc = "I could use one last sip of whiskey."
 
 func on_Click():
