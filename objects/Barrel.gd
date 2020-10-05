@@ -5,7 +5,7 @@ onready var shot = false
 onready var desc = "I could use one last sip of whiskey."
 
 func on_Click():
-	if !dropped:
+	if !dropped and allowed():
 		dropped = true
 		$Anime.play("Roll")
 		get_parent().get_node("Anime").play("BarrelRoll")

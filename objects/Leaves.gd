@@ -9,5 +9,6 @@ func on_Click():
 		dissolved = true
 		var beam1 = get_parent().get_node("Beam1")
 		beam1.visible = true
+		get_parent().check_win()
 		turn()
 		unturn()

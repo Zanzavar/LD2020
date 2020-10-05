@@ -7,11 +7,6 @@ func dialog(text):
 onready var turn = 0
 onready var advancing = false
 
-# MANOLI
-# Αν το διαβάζεις αυτό σε όλα τα on_Click των objects
-# θα πρέπει να καλείται στο τέλος το πιο κάτω function
-# για να μετράνε οι γύροι. turn().
-# Μόνο στα clicks που μας ενδιαφέρουν να αλλάζει το turn.
 func advance():
 	if !advancing:
 		advancing = true
@@ -22,8 +17,9 @@ func advance():
 func check_event():
 		match turn:
 			3:
-				advancing = true
-				apple_drops()
+				if !$BadApple.dropped:
+					advancing = true
+					apple_drops()
 				turn += 1
 			6:
 				advancing = true
@@ -81,18 +77,26 @@ func _on_Anime_animation_finished(anim_name):
 		"HorseMoving":
 			$Horse/Anime.play("Eating")
 			end_of_life()
+		"RopeBurning":
+			get_parent().add_child(load("res://scenes/Success.tscn").instance())
+			get_parent().remove_child(self)
 		"Mirror":
 			if !$Hat.dropped:
 				$Mirror/Sprite.texture = load("res://stam/monday/broken_mirror.png")
 				$Mirror.desc = "7 years bad luck. I guess that's good news considering the circumstances"
 				$Mirror/Audio.play(0.3)
 				$Hat.z_index = 1
-			else: $Beam2.visible = true
+			else: check_win()
 			$Mirror/Clickable.visible = true
 			continue
 		_:
 			advancing = false
 			check_event()
+
+func check_win():
+	if $Hat.dropped and $Bag.dropped and !$Mirror.broken and $Leaves.dissolved:
+		$Beam2.visible = true
+		$Anime.play("RopeBurning")
 
 func _on_Timer_timeout():
 	advancing = false
