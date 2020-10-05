@@ -21,17 +21,20 @@ func advance():
 
 func check_event():
 		match turn:
-			3: 
+			3:
+				advancing = true
 				apple_drops()
 				turn += 1
-			6: 
+			6:
+				advancing = true
 				mouse_comes()
 				turn += 1
-			9: 
+			9:
+				advancing = true
 				horse_leaves()
 				turn += 1
 
-func apple_drops(): if !$BadApple.dropped: $Anime.play("BadApple")
+func apple_drops(): if !$Apple.dropped: $Anime.play("BadApple")
 func mouse_comes():
 	if !$Pistol.hit_barrel: mouse_sleeps()
 	else: mouse_scares_horse()
@@ -81,11 +84,15 @@ func _on_Anime_animation_finished(anim_name):
 		"Mirror":
 			if !$Hat.dropped:
 				$Mirror/Sprite.texture = load("res://stam/monday/broken_mirror.png")
-				$Mirror.desc = "7 years bad luck. I guess that's good news considering the circustances"
+				$Mirror.desc = "7 years bad luck. I guess that's good news considering the circumstances"
+				$Mirror/Audio.play(0.3)
 				$Hat.z_index = 1
 			else: $Beam2.visible = true
+			$Mirror/Clickable.visible = true
 			continue
-		_: $Timer.start()
+		_:
+			advancing = false
+			check_event()
 
 func _on_Timer_timeout():
 	advancing = false
