@@ -14,6 +14,9 @@ func _on_Area_mouse_entered():
 func _on_Area_mouse_exited(): dialog.text = ""
 
 func allowed(): return !get_parent().advancing
-func unturn(): get_parent().get_node("Timer").start()
+func unturn(): 
+	var timer = get_parent().get_node("Timer")
+	if timer.time_left == 0: timer.start()
+
 func turn(): get_parent().advance()
 func on_Click(): pass
