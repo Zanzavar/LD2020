@@ -5,7 +5,7 @@ onready var emotes = ["Idle", "Wink", "LookUp", "LookDown", "LookLeft", "LookRig
 onready var dead = false
 
 func on_Click():
-	if !$Bill1.playing or !$Bill1.playing or !dead and allowed():
+	if (!$Bill1.playing or !$Bill2.playing or !dead) and allowed():
 		var chance = randi()%100+1
 		if (chance < 50):
 			$Bill1.play()
@@ -26,3 +26,8 @@ func _on_Timer_timeout():
 			$Anime.play(emotes[4])
 		else:
 			$Anime.play(emotes[0])
+			
+func tombstone():
+	var instance = load("res://scenes/Death.tscn").instance()
+	get_parent().add_child(instance)
+	
