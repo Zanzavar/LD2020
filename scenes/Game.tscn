@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://objects/Horse.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Mouse.tscn" type="PackedScene" id=2]
@@ -208,7 +208,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 118, -0.25, 0, 0.51144, 5.38943, 175.644, -0.25, 0, 0.479306, 2.48833, 348.777, -0.25, 0, 0.25, 0, 539.911, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 124.682, -0.25, 0, 0.25, 0, 175.644, -0.25, 0, 0.479306, 2.48833, 348.777, -0.25, 0, 0.25, 0, 539.911, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 1, 2, 3 )
 }
 tracks/1/type = "bezier"
@@ -218,7 +218,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 139.854, -0.25, 0, 0.25, 0, 108.46, -0.25, 0, 0.25, 0, 230.466, -0.25, 0, 0.25, 0, 177.609, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 113.127, -0.25, 0, 0.25, 0, 108.46, -0.25, 0, 0.25, 0, 230.466, -0.25, 0, 0.25, 0, 177.609, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 1, 2, 3 )
 }
 tracks/2/type = "audio"
@@ -382,7 +382,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 1.2, 2 )
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=8]
 resource_name = "HorseMoving"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Horse:position")
@@ -397,8 +397,7 @@ tracks/0/keys = {
 "values": [ Vector2( 253.961, 177.345 ), Vector2( 330.415, 177.345 ) ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "Mirror"
+[sub_resource type="Animation" id=9]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Mirror:position:x")
 tracks/0/interp = 1
@@ -442,7 +441,22 @@ tracks/3/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="Animation" id=10]
+resource_name = "MouseWhiskey"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Mouse:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -30.5296, 219.735 ), Vector2( 78.1602, 221.071 ) ]
+}
+
+[sub_resource type="DynamicFont" id=11]
 font_data = ExtResource( 19 )
 
 [node name="Game" type="Node2D"]
@@ -474,8 +488,7 @@ __meta__ = {
 position = Vector2( 416.351, 37.0859 )
 
 [node name="Apple" parent="." instance=ExtResource( 6 )]
-position = Vector2( 317.81, 152.169 )
-rotation = -2.02749
+position = Vector2( 316.824, 51.5095 )
 
 [node name="Bag" parent="." instance=ExtResource( 8 )]
 position = Vector2( 346.079, 160.682 )
@@ -487,7 +500,7 @@ position = Vector2( 253.961, 177.345 )
 position = Vector2( 238.044, 129.528 )
 
 [node name="Mouse" parent="." instance=ExtResource( 2 )]
-position = Vector2( -37.6568, 241.562 )
+position = Vector2( -30.5296, 219.735 )
 
 [node name="Hat" parent="." instance=ExtResource( 4 )]
 position = Vector2( 350, 247 )
@@ -505,13 +518,13 @@ rotation = 0.785398
 position = Vector2( 169.373, 216.488 )
 
 [node name="Barrel" parent="." instance=ExtResource( 10 )]
-position = Vector2( 68.624, 214.624 )
+position = Vector2( 22.1744, 132.551 )
 
 [node name="Clock" parent="." instance=ExtResource( 26 )]
 position = Vector2( 126.953, 161.698 )
 
 [node name="Bird" parent="." instance=ExtResource( 12 )]
-position = Vector2( 124.236, 110.9 )
+position = Vector2( 124.997, 110.922 )
 
 [node name="Hive" parent="." instance=ExtResource( 7 )]
 position = Vector2( 438.313, 115.915 )
@@ -539,8 +552,9 @@ anims/BirdBee = SubResource( 4 )
 anims/BirdHat = SubResource( 5 )
 anims/HatDrop = SubResource( 6 )
 anims/Hive = SubResource( 7 )
-anims/HorseMoving = SubResource( 10 )
-anims/Mirror = SubResource( 8 )
+anims/HorseMoving = SubResource( 8 )
+anims/Mirror = SubResource( 9 )
+anims/MouseWhiskey = SubResource( 10 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -549,7 +563,7 @@ one_shot = true
 margin_top = 275.0
 margin_right = 480.0
 margin_bottom = 291.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 11 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

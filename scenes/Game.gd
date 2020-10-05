@@ -41,7 +41,9 @@ func horse_leaves_to_eat():
 			pass #Animation να πάει τρώει.
 	
 func mouse_scares_horse(): pass #Animation
-func mouse_sleeps(): pass #Animation
+func mouse_sleeps():
+	$Anime.play("MouseWhiskey")
+	$Mouse/Anime.play("Running")
 func end_of_life(): pass #?????????
 
 func _on_Anime_animation_finished(anim_name):
