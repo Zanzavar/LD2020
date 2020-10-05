@@ -32,7 +32,7 @@ func check_event():
 
 func apple_drops(): if !$Apple.dropped: $Anime.play("BadApple")
 func mouse_comes():
-	if !$Pistol.hit_barrel: mouse_sleeps()
+	if $Pistol.hit_barrel: mouse_sleeps()
 	else: mouse_scares_horse()
 
 func horse_leaves(): if !$Mirror.broken: pass
@@ -41,7 +41,6 @@ func pistol_shoot():
 	if $Barrel.dropped and !$Barrel.shot:
 		$Barrel.shot = true
 		$Barrel/Anime.play("Whiskey")
-		#return true; return false
 
 func horse_leaves_to_eat():
 		if !$Horse.ate:
@@ -50,11 +49,22 @@ func horse_leaves_to_eat():
 func mouse_scares_horse():
 	$Anime.play("MouseHunting")
 	$Mouse/Anime.play("Running")
-	$Anime.play("HorseScared")
 	$Horse/Anime.play("Walk")
+	end_of_life()
+	
 func mouse_sleeps():
 	$Anime.play("MouseWhiskey")
-	$Mouse/Anime.play("Running")
+
+func mouse_real_sleep():
+	$Mouse/Anime.stop()
+
+func mouse_real_drunk():
+	$Mouse/Anime.play("Drunk")
+
+func end_of_time():
+	$Anime.play("HorseScared")
+	$Horse/Anime.play("Walk")
+	end_of_life()		
 
 func end_of_life():
 	$Bill/Anime.play("Death")
@@ -67,6 +77,7 @@ func _on_Anime_animation_finished(anim_name):
 				$Anime.play("BirdBee")
 				$Bird/Anime.play("Flight")
 			else:
+				$Bird.took_it = true
 				$Anime.play("BirdHat")
 				$Bird/Anime.play("Flight")
 		"Apple":
@@ -81,7 +92,7 @@ func _on_Anime_animation_finished(anim_name):
 			get_parent().add_child(load("res://scenes/Success.tscn").instance())
 			get_parent().remove_child(self)
 		"Mirror":
-			if !$Hat.dropped:
+			if !$Hat.dropped or ($Hat.dropped and $Bird.took_it):
 				$Mirror/Sprite.texture = load("res://stam/monday/broken_mirror.png")
 				$Mirror.desc = "7 years bad luck. I guess that's good news considering the circumstances"
 				$Mirror/Audio.play(0.3)

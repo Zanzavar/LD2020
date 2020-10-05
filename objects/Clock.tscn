@@ -51,10 +51,10 @@ position = Vector2( -0.947586, -4.87964 )
 position = Vector2( -1.12373, 7.49154 )
 shape = SubResource( 2 )
 
-[node name="Cuckoo" type="AudioStreamPlayer" parent="."]
+[node name="Cuckoo" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
 
-[node name="Clock" type="AudioStreamPlayer" parent="."]
+[node name="Clock" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
 
 [editable path="Clickable"]
