@@ -15,7 +15,7 @@ size = 20
 font_data = ExtResource( 2 )
 
 [node name="Death" type="Node2D"]
-position = Vector2( 241.329, 273.458 )
+position = Vector2( 241.726, 276.038 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true

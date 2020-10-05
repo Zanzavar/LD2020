@@ -81,7 +81,7 @@ func _on_Anime_animation_finished(anim_name):
 		"Mirror":
 			if !$Hat.dropped:
 				$Mirror/Sprite.texture = load("res://stam/monday/broken_mirror.png")
-				$Mirror.desc = "TODO MANOLI // από δω κάτω μπορείς να παίξεις και τον ήχο"
+				$Mirror.desc = "7 years bad luck. I guess that's good news considering the circustances"
 				$Hat.z_index = 1
 			else: $Beam2.visible = true
 			continue

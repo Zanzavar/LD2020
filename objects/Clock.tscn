@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://stam/clock.png" type="Texture" id=1]
 [ext_resource path="res://stam/clock_index.png" type="Texture" id=2]
 [ext_resource path="res://objects/Clock.gd" type="Script" id=3]
 [ext_resource path="res://objects/Clickable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/sounds/cuckoo.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sounds/clock.wav" type="AudioStream" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -23,6 +24,10 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 17.212
+height = 29.1102
+
 [node name="Clock" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -40,7 +45,16 @@ texture = ExtResource( 2 )
 hframes = 8
 
 [node name="Clickable" parent="." instance=ExtResource( 4 )]
-position = Vector2( -0.198425, -16.8661 )
+position = Vector2( -0.947586, -4.87964 )
+
+[node name="CollisionShape2D" parent="Clickable/Area" index="0"]
+position = Vector2( -1.12373, 7.49154 )
+shape = SubResource( 2 )
 
 [node name="Cuckoo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+
+[node name="Clock" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[editable path="Clickable"]

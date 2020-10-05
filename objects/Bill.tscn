@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://objects/Clickable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stam/bill_idle.png" type="Texture" id=2]
@@ -398,11 +398,11 @@ tracks/3/keys = {
 "values": [ 3 ]
 }
 
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 15.7816
+
 [node name="Bill" type="Node2D"]
 script = ExtResource( 3 )
-
-[node name="Clickable" parent="." instance=ExtResource( 1 )]
-position = Vector2( -1.12373, -2.99661 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -1.48651, 11.5204 )
@@ -429,9 +429,18 @@ next/Wink = "Idle"
 wait_time = 3.0
 autostart = true
 
+[node name="Clickable" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1.12373, -2.99661 )
+
+[node name="CollisionShape2D" parent="Clickable/Area" index="0"]
+position = Vector2( 0, 24.0688 )
+shape = SubResource( 8 )
+
 [node name="Bill2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 
 [node name="Bill1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[editable path="Clickable"]

@@ -122,6 +122,7 @@ tracks/3/keys = {
 }
 
 [node name="Leaves" type="Node2D"]
+visible = false
 script = ExtResource( 2 )
 
 [node name="Clickable" parent="." instance=ExtResource( 1 )]
