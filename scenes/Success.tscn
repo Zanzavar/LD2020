@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Success.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/mini_pixel-7.ttf" type="DynamicFontData" id=2]
@@ -41,7 +41,9 @@ tracks/0/keys = {
 size = 20
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="DynamicFont" id=5]
 size = 20
 font_data = ExtResource( 2 )
 
@@ -82,7 +84,8 @@ margin_left = 180.155
 margin_top = 257.044
 margin_right = 280.155
 margin_bottom = 283.044
-custom_fonts/font = SubResource( 4 )
+custom_styles/focus = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 0.952941, 0.313726, 1 )
 text = "Restart"
 flat = true

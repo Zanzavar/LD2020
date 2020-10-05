@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/fonts/mini_pixel-7.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/Instructions.gd" type="Script" id=2]
@@ -10,6 +10,8 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=2]
 size = 20
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="DynamicFont" id=3]
 size = 20
@@ -41,7 +43,9 @@ margin_left = 185.767
 margin_top = 216.073
 margin_right = 285.767
 margin_bottom = 242.073
+custom_styles/focus = SubResource( 4 )
 custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.858824, 0.729412, 0.309804, 1 )
 text = "Back"
 flat = true
 __meta__ = {
