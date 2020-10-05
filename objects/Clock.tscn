@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://stam/clock.png" type="Texture" id=1]
 [ext_resource path="res://stam/clock_index.png" type="Texture" id=2]
 [ext_resource path="res://objects/Clock.gd" type="Script" id=3]
 [ext_resource path="res://objects/Clickable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sounds/cuckoo.wav" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -40,3 +41,6 @@ hframes = 8
 
 [node name="Clickable" parent="." instance=ExtResource( 4 )]
 position = Vector2( -0.198425, -16.8661 )
+
+[node name="Cuckoo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
