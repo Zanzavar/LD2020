@@ -17,12 +17,14 @@ func advance():
 		advancing = true
 		$Clock.move_index()
 		$Timer.start()
-		match turn:
-			2: apple_drops()
-			4: mouse_comes()
-			6: horse_leaves()
 		turn += 1
 		print(turn)
+
+func check_event():
+		match turn:
+			3: apple_drops()
+			5: mouse_comes()
+			7: horse_leaves()
 
 func apple_drops(): if !$Apple.dropped: $Anime.play("BadApple")
 func mouse_comes():
@@ -66,8 +68,6 @@ func _on_Anime_animation_finished(anim_name):
 		"HorseMoving":
 			$Horse/Anime.play("Eating")
 			end_of_life()
-
-func _on_Timer_timeout():
-	advancing = false
+		_: advancing = false
 	
 
