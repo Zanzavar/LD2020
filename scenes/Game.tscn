@@ -556,9 +556,6 @@ anims/HorseMoving = SubResource( 8 )
 anims/Mirror = SubResource( 9 )
 anims/MouseWhiskey = SubResource( 10 )
 
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
-
 [node name="DescriptionBack" type="Sprite" parent="."]
 modulate = Color( 0.0941176, 0.0862745, 0.0862745, 1 )
 position = Vector2( 0, 270 )
@@ -581,7 +578,6 @@ __meta__ = {
 stream = ExtResource( 21 )
 volume_db = -11.387
 [connection signal="animation_finished" from="Anime" to="." method="_on_Anime_animation_finished"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="Hat"]
 

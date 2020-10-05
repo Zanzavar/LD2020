@@ -7,4 +7,6 @@ func on_Click():
 		$Snort.play()
 		turn()
 
-func eat_apple(): get_parent().get_node("Apple").visible = false
+func eat_apple(): 
+	get_parent().get_node("Apple").visible = false
+	get_parent().advancing = false
