@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://objects/Horse.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Mouse.tscn" type="PackedScene" id=2]
@@ -29,6 +29,9 @@
 [ext_resource path="res://assets/sprites/pixel.png" type="Texture" id=27]
 [ext_resource path="res://assets/sprites/beam1.png" type="Texture" id=28]
 [ext_resource path="res://assets/sprites/beam2.png" type="Texture" id=29]
+[ext_resource path="res://objects/Bees.tscn" type="PackedScene" id=30]
+[ext_resource path="res://assets/sounds/bee_hive.wav" type="AudioStream" id=31]
+[ext_resource path="res://assets/sounds/mouse_squeak.wav" type="AudioStream" id=32]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Apple"
@@ -201,6 +204,79 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=4]
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Bird:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 124.997, -0.25, 0, 0.25, 0, 302.346, -0.25, 0, 0.25, 0, -88.2704, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Bird:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 110.922, -0.25, 0, 0.25, 0, 220.362, -0.25, 0, 0.25, 0, 159.188, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 2 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Bees:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 435.515, -0.25, 0, 0.25, 0, 346.84, -0.25, 0, 0.25, 0, -44.8984, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 2 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Bees:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 245.819, -0.25, 0, 0.25, 0, 222.808, -0.25, 0, 0.25, 0, 163.879, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 2 )
+}
+tracks/4/type = "audio"
+tracks/4/path = NodePath("AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 31 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "audio"
+tracks/5/path = NodePath("AudioStreamPlayer2")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 22 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 22 )
+} ],
+"times": PoolRealArray( 0, 1 )
+}
 
 [sub_resource type="Animation" id=5]
 length = 3.0
@@ -461,6 +537,41 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=11]
 resource_name = "MouseHunting"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Mouse:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -30.5296, -0.25, 0, 0.25, 0, 522.282, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Mouse:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 219.735, -0.25, 0, 0.25, 0, 219.735, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 32 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="Animation" id=12]
 tracks/0/type = "value"
@@ -524,7 +635,8 @@ __meta__ = {
 position = Vector2( 416.351, 37.0859 )
 
 [node name="Apple" parent="." instance=ExtResource( 6 )]
-position = Vector2( 316.824, 51.5095 )
+position = Vector2( 303.555, 222.349 )
+rotation = -6.37972
 
 [node name="Bag" parent="." instance=ExtResource( 8 )]
 position = Vector2( 346.079, 160.682 )
@@ -539,13 +651,15 @@ position = Vector2( 238.044, 129.528 )
 position = Vector2( 22.1744, 132.551 )
 
 [node name="Mouse" parent="." instance=ExtResource( 2 )]
-position = Vector2( -30.5296, 219.735 )
+position = Vector2( 522.282, 219.735 )
 
 [node name="Hat" parent="." instance=ExtResource( 4 )]
-position = Vector2( 236.322, 102.535 )
+position = Vector2( 350, 247 )
+rotation = 6.30638
 
 [node name="Sprite" parent="Hat" index="1"]
 position = Vector2( 0.220505, -0.0886993 )
+texture = ExtResource( 15 )
 
 [node name="Mirror" parent="." instance=ExtResource( 11 )]
 show_behind_parent = true
@@ -559,11 +673,14 @@ position = Vector2( 169.373, 216.488 )
 position = Vector2( 126.953, 161.698 )
 
 [node name="Bird" parent="." instance=ExtResource( 12 )]
-position = Vector2( 124.997, 110.922 )
+position = Vector2( -88.2704, 159.188 )
+
+[node name="Bees" parent="." instance=ExtResource( 30 )]
+position = Vector2( -44.8984, 163.879 )
 
 [node name="Hive" parent="." instance=ExtResource( 7 )]
-position = Vector2( 438.313, 115.915 )
-rotation = 0.0340269
+position = Vector2( 438.097, 244.262 )
+rotation = 2.48072
 
 [node name="BadApple" type="Node2D" parent="."]
 position = Vector2( 399.418, 65.0567 )
@@ -613,7 +730,7 @@ __meta__ = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 21 )
+stream = ExtResource( 32 )
 volume_db = -11.387
 
 [node name="Beam1" type="Sprite" parent="."]
@@ -635,6 +752,9 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
 [connection signal="animation_finished" from="Anime" to="." method="_on_Anime_animation_finished"]
 
 [editable path="Hat"]

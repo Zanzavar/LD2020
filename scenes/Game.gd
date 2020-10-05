@@ -66,6 +66,7 @@ func _on_Anime_animation_finished(anim_name):
 		"HatDrop":
 			if $Hive.dropped:
 				$Anime.play("BirdBee")
+				$Bird/Anime.play("Flight")
 			else:
 				$Anime.play("BirdHat")
 				$Bird/Anime.play("Flight")
