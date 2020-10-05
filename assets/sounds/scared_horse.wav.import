@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/scared_horse.wav-6346522a4a8de81baba30d79601fd47a.sample"
+
+[deps]
+
+source_file="res://assets/sounds/scared_horse.wav"
+dest_files=[ "res://.import/scared_horse.wav-6346522a4a8de81baba30d79601fd47a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
