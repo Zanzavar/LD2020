@@ -4,6 +4,7 @@ onready var game = load("res://scenes/Game.tscn").instance()
 onready var gunshot = get_node("Gunshot")
 
 func _ready():
+	get_parent().advancing = true
 	var chance = randi()%100+1
 	if (chance < 30):
 		$Inscription.text = "He was always stuck in a loop."
