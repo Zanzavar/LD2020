@@ -1,10 +1,15 @@
 extends "Clickable.gd"
 
+onready var desc = "What is this grandfather clock doing here?"
+onready var cuckoo = get_node("Cuckoo")
 
-onready var desc = "Mas telionei o xronos"
 func move_index(): 
 	if $Index.frame == 7:
 		$Index.frame = 0
+		cuckoo.play()
 	else: $Index.frame += 1
-	
-func on_Click(): if allowed(): turn()
+
+func on_Click(): 
+	if allowed():
+		turn()
+		unturn()

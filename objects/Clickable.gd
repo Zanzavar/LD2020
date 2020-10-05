@@ -13,8 +13,8 @@ func _on_Area_mouse_entered():
 
 func _on_Area_mouse_exited(): dialog.text = ""
 
-func allowed(): return get_parent().get_node("Timer").is_stopped()
+func allowed(): return !get_parent().advancing
+func unturn(): get_parent().get_node("Timer").start()
 func turn(): get_parent().advance()
-
 func on_Click(): pass
 

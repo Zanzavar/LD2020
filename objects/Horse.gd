@@ -9,4 +9,4 @@ func on_Click():
 
 func eat_apple(): 
 	get_parent().get_node("Apple").visible = false
-	get_parent().advancing = false
+	unturn()

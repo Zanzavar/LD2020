@@ -8,3 +8,4 @@ func on_Click():
 		$Anime.play("Dissolve")
 		dissolved = true
 		turn()
+		unturn()
