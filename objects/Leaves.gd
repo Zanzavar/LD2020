@@ -7,4 +7,6 @@ func on_Click():
 	if !dissolved and allowed():
 		$Anime.play("Dissolve")
 		dissolved = true
+		var beam1 = get_parent().get_node("Beam1")
+		beam1.visible = true
 		turn()
