@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://objects/Horse.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Mouse.tscn" type="PackedScene" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://objects/Leaves.tscn" type="PackedScene" id=24]
 [ext_resource path="res://stam/tree.png" type="Texture" id=25]
 [ext_resource path="res://objects/Clock.tscn" type="PackedScene" id=26]
+[ext_resource path="res://assets/sprites/pixel.png" type="Texture" id=27]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Apple"
@@ -499,15 +500,17 @@ position = Vector2( 253.961, 177.345 )
 [node name="Bill" parent="." instance=ExtResource( 5 )]
 position = Vector2( 238.044, 129.528 )
 
+[node name="Barrel" parent="." instance=ExtResource( 10 )]
+position = Vector2( 22.1744, 132.551 )
+
 [node name="Mouse" parent="." instance=ExtResource( 2 )]
 position = Vector2( -30.5296, 219.735 )
 
 [node name="Hat" parent="." instance=ExtResource( 4 )]
-position = Vector2( 350, 247 )
+position = Vector2( 236.322, 102.535 )
 
 [node name="Sprite" parent="Hat" index="1"]
 position = Vector2( 0.220505, -0.0886993 )
-texture = ExtResource( 15 )
 
 [node name="Mirror" parent="." instance=ExtResource( 11 )]
 show_behind_parent = true
@@ -516,9 +519,6 @@ rotation = 0.785398
 
 [node name="Pistol" parent="." instance=ExtResource( 9 )]
 position = Vector2( 169.373, 216.488 )
-
-[node name="Barrel" parent="." instance=ExtResource( 10 )]
-position = Vector2( 22.1744, 132.551 )
 
 [node name="Clock" parent="." instance=ExtResource( 26 )]
 position = Vector2( 126.953, 161.698 )
@@ -558,6 +558,14 @@ anims/MouseWhiskey = SubResource( 10 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="DescriptionBack" type="Sprite" parent="."]
+modulate = Color( 0.0941176, 0.0862745, 0.0862745, 1 )
+position = Vector2( 0, 270 )
+texture = ExtResource( 27 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 480, 30 )
 
 [node name="Label" type="Label" parent="."]
 margin_top = 275.0

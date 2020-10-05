@@ -69,3 +69,5 @@ func _on_Anime_animation_finished(anim_name):
 
 func _on_Timer_timeout():
 	advancing = false
+	
+

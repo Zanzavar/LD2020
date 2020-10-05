@@ -27,3 +27,8 @@ func _on_Timer_timeout():
 			$Anime.play(emotes[4])
 		else:
 			$Anime.play(emotes[0])
+			
+func tombstone():
+	var instance = load("res://scenes/Death.tscn").instance()
+	get_parent().add_child(instance)
+	
