@@ -17,7 +17,7 @@ func _process(_delta):
 			$AnimationPlayer.play("FadeOut")
 		state += 1
 
-func _on_AnimationPlayer_animation_finished(anim_name):
+func _on_AnimationPlayer_animation_finished(_anim_name):
 	if state == 3:
 		get_parent().add_child(world)
 		get_parent().remove_child(self)

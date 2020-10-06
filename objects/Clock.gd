@@ -8,7 +8,7 @@ func _ready():
 	$Index.frame = 1
 
 func move_index():
-	if get_parent().turn != 3 and get_parent().turn != 6 and get_parent().turn != 9:
+	if get_parent().turn != 2 and get_parent().turn != 5 and get_parent().turn != 9:
 		if $Index.frame == 7:
 			$Index.frame = 0
 			if get_parent().get_node("Hat").dropped and get_parent().get_node("Bag").dropped and !get_parent().get_node("Mirror").broken and get_parent().get_node("Leaves").dissolved: pass
