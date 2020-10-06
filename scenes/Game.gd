@@ -16,12 +16,12 @@ func advance():
 
 func check_event():
 		match turn:
-			3:
+			2:
 				if !$BadApple.dropped:
 					advancing = true
 					apple_drops()
 				turn += 1
-			6:
+			5:
 				advancing = true
 				mouse_comes()
 				turn += 1
