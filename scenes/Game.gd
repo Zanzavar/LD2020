@@ -96,6 +96,7 @@ func _on_Anime_animation_finished(anim_name):
 				$Mirror/Sprite.texture = load("res://stam/monday/broken_mirror.png")
 				$Mirror.desc = "7 years bad luck. I guess that's good news considering the circumstances"
 				$Mirror/Audio.play(0.3)
+				$Mirror.broken = true
 				$Hat.z_index = 1
 			else: check_win()
 			$Mirror/Clickable.visible = true

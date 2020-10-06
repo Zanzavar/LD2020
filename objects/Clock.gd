@@ -12,7 +12,8 @@ func move_index():
 		if $Index.frame == 7:
 			$Index.frame = 0
 			if get_parent().get_node("Hat").dropped and get_parent().get_node("Bag").dropped and !get_parent().get_node("Mirror").broken and get_parent().get_node("Leaves").dissolved:
-				get_parent().check_win()
+				#get_parent().check_win()
+				pass
 			else:
 				cuckoo.play()
 				get_parent().end_of_time()
@@ -25,3 +26,5 @@ func on_Click():
 	if allowed():
 		turn()
 		unturn()
+
+func _on_Cuckoo_finished(): pass
