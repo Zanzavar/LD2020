@@ -11,12 +11,9 @@ func move_index():
 	if get_parent().turn != 3 and get_parent().turn != 6 and get_parent().turn != 9:
 		if $Index.frame == 7:
 			$Index.frame = 0
-			if get_parent().get_node("Hat").dropped and get_parent().get_node("Bag").dropped and !get_parent().get_node("Mirror").broken and get_parent().get_node("Leaves").dissolved:
-				#get_parent().check_win()
-				pass
-			else:
-				cuckoo.play()
-				get_parent().end_of_time()
+			if get_parent().get_node("Hat").dropped and get_parent().get_node("Bag").dropped and !get_parent().get_node("Mirror").broken and get_parent().get_node("Leaves").dissolved: pass
+			else: cuckoo.play()
+				
 		else: 
 			$Index.frame += 1
 			clock.play()
@@ -27,4 +24,5 @@ func on_Click():
 		turn()
 		unturn()
 
-func _on_Cuckoo_finished(): pass
+func _on_Cuckoo_finished(): 
+	get_parent().end_of_time()
