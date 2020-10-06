@@ -561,7 +561,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Mirror:show_behind_parent")
+tracks/3/path = NodePath("Mirror:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -570,7 +570,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -780,7 +780,7 @@ position = Vector2( 236.322, 102.535 )
 position = Vector2( 0.220505, -0.0886993 )
 
 [node name="Mirror" parent="." instance=ExtResource( 11 )]
-show_behind_parent = true
+visible = false
 position = Vector2( 346.587, 167.668 )
 rotation = 0.785398
 
